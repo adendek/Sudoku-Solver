@@ -10,6 +10,10 @@ Python 3
 
 sudo apt install python3-pip
 ````
+
+## Tests
+[![Coverage Status](https://coveralls.io/repos/github/ghribar97/Sudoku-Solver/badge.svg?branch=master)](https://coveralls.io/github/ghribar97/Sudoku-Solver?branch=master)
+
 ## Authors
 1. Gašper Hribar
 2. Alexis Ouksel
