@@ -8,10 +8,10 @@ Table of contents
 =================
 <!--ts-->
 * [Sudoku-Solver](#Sudoku-Solver)
-* [Table of contents](#Table of contents)
-* [Getting Started](#Getting Started)
+* [Table of contents](#Table-of-contents)
+* [Getting Started](#Getting-Started)
     * [Prerequisites](#Prerequisites)
-    * [Quick start](#Quick start)
+    * [Quick start](#Quick-start)
 * [Tests](#Tests)
 * [Authors](#Authors)
 <!--te-->
