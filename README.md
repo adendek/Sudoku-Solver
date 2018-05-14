@@ -6,6 +6,7 @@ It uses [openCV](https://opencv.org/) library for sudoku field detection, and it
 
 Table of contents
 =================
+<!--ts-->
 * [Sudoku-Solver](#Sudoku-Solver)
 * [Table of contents](#Table of contents)
 * [Getting Started](#Getting Started)
@@ -13,6 +14,7 @@ Table of contents
     * [Quick start](#Quick start)
 * [Tests](#Tests)
 * [Authors](#Authors)
+<!--te-->
     
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
