@@ -7,13 +7,13 @@ It uses [openCV](https://opencv.org/) library for sudoku field detection, and it
 Table of contents
 =================
 <!--ts-->
-* [Sudoku-Solver](#Sudoku-Solver)
-* [Table of contents](#Table-of-contents)
-* [Getting Started](#Getting-Started)
-    * [Prerequisites](#Prerequisites)
-    * [Quick start](#Quick-start)
-* [Tests](#Tests)
-* [Authors](#Authors)
+   * [Sudoku-Solver](#Sudoku-Solver)
+   * [Table of contents](#Table-of-contents)
+   * [Getting Started](#Getting-Started)
+       * [Prerequisites](#Prerequisites)
+       * [Quick start](#Quick-start)
+   * [Tests](#Tests)
+   * [Authors](#Authors)
 <!--te-->
     
 ## Getting Started
