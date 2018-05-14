@@ -74,4 +74,4 @@ Test coverage is:
 3. [Jesus Prieto Garcia](https://github.com/jesusprietogarcia22)
 4. [Roman Suchwalko](https://github.com/rsuchwalko)
 
-[To the top!](#Sudoku-Solver)
+[To the top!](#sudoku-solver)
