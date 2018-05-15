@@ -50,13 +50,13 @@ To get all of the files needed to run this program, decide for one of the follow
 
 ### Quick start
 
-To start a program go to the directory where the Sudoku-Solver files are located and execute command:
+To start a program go to the directory where the Sudoku-Solver files are located and execute this command:
 
 `
 $ python3 main.py
 `
 
-Afterthe execution the program should start.
+After the execution the program should start.
 
 ## Tests
 To run the tests for this project go to [Tests](https://github.com/ghribar97/Sudoku-Solver/tree/master/Tests) directory and run [mainTester.py](https://github.com/ghribar97/Sudoku-Solver/blob/master/Tests/mainTester.py)
