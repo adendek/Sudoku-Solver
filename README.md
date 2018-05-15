@@ -40,13 +40,13 @@ To get all of the files needed to run this program, decide for one of the follow
 1. If the git is not yet installed, check this tutorial how to install it [https://www.atlassian.com/git/tutorials/install-git](https://www.atlassian.com/git/tutorials/install-git)
 2. Open the console and go to the directory, where you want to download files.
 3. Use the command `git clone https://github.com/ghribar97/Sudoku-Solver.git`.
-4. Files are ready. To run Sudoku-Solver check [Quick start](#Quick start).
+4. Files are ready. To run Sudoku-Solver check [Quick start](#quick-start).
 
 ##### Download files
 1. Go to the repository page [https://github.com/ghribar97/Sudoku-Solver](https://github.com/ghribar97/Sudoku-Solver)
 2. Click a big green button "Clone or download" and choose "download ZIP" option.
 3. After download you must unzip the files with a [WinZip](http://www.winzip.com/win/en/prod_down.html) software, or any other program.
-4. Files are ready. To run Sudoku-Solver check [Quick start](#Quick start).
+4. Files are ready. To run Sudoku-Solver check [Quick start](#quick-start).
 
 ### Quick start
 
