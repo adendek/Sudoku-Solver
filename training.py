@@ -3,12 +3,16 @@ import sys
 import numpy as np
 import cv2
 
-im = cv2.imread('book.jpg')
+im = cv2.imread('digits.jpg')
 im3 = im.copy()
 
+kernel = np.ones((1,1), np.uint8)
+im = cv2.dilate(im, kernel, iterations=1)
+im = cv2.erode(im, kernel, iterations=1)
 gray = cv2.cvtColor(im,cv2.COLOR_BGR2GRAY)
+
 blur = cv2.GaussianBlur(gray,(5,5),0)
-thresh = cv2.adaptiveThreshold(blur,255,1,1,11,2)
+thresh = cv2.adaptiveThreshold(gray,255,1,1,11,2)
 
 #################      Now finding Contours         ###################
 
@@ -26,11 +30,15 @@ for cnt in contours:
             cv2.rectangle(im,(x,y),(x+w,y+h),(0,0,255),2)
             roi = thresh[y:y+h,x:x+w]
             roismall = cv2.resize(roi,(10,10))
-            cv2.imshow('norm',im)
+            imS = cv2.resize(im, (960, 540))
+            cv2.imshow('norm',imS)
             key = cv2.waitKey(0)
 
             if key == 27:  # (escape to quit)
                 sys.exit()
+            elif key == 32:
+                pass
+                pass
             elif key in keys:
                 responses.append(int(chr(key)))
                 sample = roismall.reshape((1,100))
