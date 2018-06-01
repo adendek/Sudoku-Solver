@@ -12,7 +12,7 @@ model.train(samples,cv2.ml.ROW_SAMPLE,responses)
 
 ############################# testing part  #########################
 
-im = cv2.imread('pitrain.png')
+im = cv2.imread('sudoku1.jpg')
 kernel = np.ones((1,1), np.uint8)
 im = cv2.dilate(im, kernel, iterations=1)
 im = cv2.erode(im, kernel, iterations=1)
