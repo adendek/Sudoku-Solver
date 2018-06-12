@@ -3,10 +3,34 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.ensemble import RandomForestClassifier
 from scipy.misc import imread, imresize
-from sklearn import datasets, svm, metrics
+from sklearn import datasets, svm
 
 tl_ratio = 2
 
+
+def classify(img, classifier):
+    img = resize(img)
+    return classifier.predict(img.reshape((1, img.shape[0] * img.shape[1])))[0]
+
+
+def setup_classifier():
+    knn = KNeighborsClassifier(3)
+    digits = datasets.load_digits()
+    n_samples = len(digits.images)
+    data = digits.images.reshape((n_samples, -1))
+    knn.fit(data[:n_samples // 2], digits.target[:n_samples // 2])
+    return knn
+
+
+def resize(img):
+    pic = imresize(img, (8, 8))
+    pic = pic[:, :, 0]
+
+    for y, val in enumerate(pic):
+        for x, val2 in enumerate(val):
+            new_value = 16 - round((val2 / 255) * 16)
+            pic[y][x] = new_value
+    return pic
 
 def get_pic(path):
     pic = imread(path)
@@ -16,10 +40,6 @@ def get_pic(path):
     for y, val in enumerate(pic):
         for x, val2 in enumerate(val):
             new_value = 16 - round((val2 / 255) * 16)
-            if new_value < 4:
-                new_value = 0
-            if new_value > 12:
-                new_value = 15
             pic[y][x] = new_value
     return pic
 
@@ -110,5 +130,7 @@ warnings.filterwarnings("ignore")
 #optimize_tree(digits, pic)
 #optimize_neuro(digits, pic)
 #optimize_forest(digits, pic)
-show_output()
+# show_output()
+
+
 
