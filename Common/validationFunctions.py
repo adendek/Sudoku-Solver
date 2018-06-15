@@ -1,3 +1,6 @@
+import types
+
+
 class Validator:
     @staticmethod
     def is_type(value, value_type):
@@ -27,4 +30,35 @@ class Validator:
                     return False
             return True
         return isinstance(value, int) or isinstance(value, float)
+
+    @staticmethod
+    def is_positive_number(value):
+        """
+        Check if a value is a positive number (int or float)
+        :param value: It can be list or a single value of anything
+        :return: True if value is a number, False if not
+        """
+        if Validator.is_number(value):
+            if isinstance(value, list):
+                for val in value:
+                    if val < 0:
+                        return False
+                return True
+            else:
+                return value >= 0
+        return False
+
+    @staticmethod
+    def is_function(value):
+        """
+        Check if value is a function
+        :param value: It can be list or a single value of anything
+        :return: True if value is that function, False if not
+        """
+        if isinstance(value, list):
+            for val in value:
+                if not callable(val):
+                    return False
+            return True
+        return callable(value)
 

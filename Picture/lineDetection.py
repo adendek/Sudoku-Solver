@@ -136,6 +136,7 @@ class Image:
 
 
 if __name__ == '__main__':
-    img = Image("sudokuNice.jpg")
+    img = Image("sudoku.jpg")
+    img.draw_lines()
     img.draw_field()
     img.show()

@@ -1,6 +1,6 @@
-from unittest import TestCase
+import unittest
 
-
-class MainTest(TestCase):
-    def test_simple(self):
-        pass
+if __name__ == "__main__":
+    # RUN THIS FILE TO TEST EVERYTHING
+    all_tests = unittest.TestLoader().discover('Tests', pattern='*.py')
+    unittest.TextTestRunner().run(all_tests)
