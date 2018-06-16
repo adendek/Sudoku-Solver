@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7be451f6-92b5-45a3-bffe-1799ccb4a32e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/Framework/main_template.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/Framework/widgets.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/captureVideo.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/capureImageView.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/variables/variables.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/askIfCorrectView.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/GUI/solutionView.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Common/validationFunctions.py" afterPath="$PROJECT_DIR$/Common/validationFunctions.py" />
-      <change beforePath="$PROJECT_DIR$/Picture/lineDetection.py" afterPath="$PROJECT_DIR$/Picture/lineDetection.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/Common/testValidator.py" afterPath="$PROJECT_DIR$/Tests/Common/ValidatorTester.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/mainTester.py" afterPath="$PROJECT_DIR$/Tests/mainTester.py" />
+      <change beforePath="$PROJECT_DIR$/GUI/Framework/main_template.py" afterPath="$PROJECT_DIR$/GUI/Framework/mainTemplate.py" />
+      <change beforePath="$PROJECT_DIR$/GUI/Framework/widgets.py" afterPath="$PROJECT_DIR$/GUI/Framework/widgets.py" />
+      <change beforePath="$PROJECT_DIR$/GUI/captureVideo.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/GUI/capureImageView.py" afterPath="$PROJECT_DIR$/GUI/capureImageView.py" />
+      <change beforePath="$PROJECT_DIR$/GUI/variables/variables.py" afterPath="$PROJECT_DIR$/GUI/variables/variables.py" />
+      <change beforePath="$PROJECT_DIR$/Tests/Common/ValidatorTester.py" afterPath="$PROJECT_DIR$/Tests/Common/ValidatorTester.py" />
+      <change beforePath="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" />
+      <change beforePath="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" />
+      <change beforePath="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,53 +26,81 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$widgets.coverage" NAME="widgets Coverage Results" MODIFIED="1529072421033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureVideoTester_CaptureVideoTester_test_get_frame.coverage" NAME="Unittests for captureVideoTester.CaptureVideoTester.test_get_frame Coverage Results" MODIFIED="1529094794254" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$main_template.coverage" NAME="main_template Coverage Results" MODIFIED="1529089044972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureVideoTester_CaptureVideoTester.coverage" NAME="Unittests for captureVideoTester.CaptureVideoTester Coverage Results" MODIFIED="1529094765740" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_incorrect_calculate_middle.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_incorrect_calculate_middle Coverage Results" MODIFIED="1529090610364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$tesseractLearn.coverage" NAME="tesseractLearn Coverage Results" MODIFIED="1527354536006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_widgetTester_py.coverage" NAME="Unittests in widgetTester.py Coverage Results" MODIFIED="1529072550989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_limit_size.coverage" NAME="Unittests for widgetTester.WidgetTester.test_limit_size Coverage Results" MODIFIED="1529145143028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$variables.coverage" NAME="variables Coverage Results" MODIFIED="1529139171143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/variables" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_sudokuFieldTemplateTester_py.coverage" NAME="Unittests in sudokuFieldTemplateTester.py Coverage Results" MODIFIED="1529150846742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$test.coverage" NAME="test Coverage Results" MODIFIED="1526493062653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_testValidator_py.coverage" NAME="Unittests in ValidatorTester.py Coverage Results" MODIFIED="1529071873097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/Common" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureImageViewTester_CaptureImageViewTester_test_exit.coverage" NAME="Unittests for captureImageViewTester.CaptureImageViewTester.test_exit Coverage Results" MODIFIED="1529093291735" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$video.coverage" NAME="video Coverage Results" MODIFIED="1527240674868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_mainTemplateTester_py.coverage" NAME="Unittests in mainTemplateTester.py Coverage Results" MODIFIED="1529090843359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureVideoTester_CaptureVideoTester_test_init.coverage" NAME="Unittests for captureVideoTester.CaptureVideoTester.test_init Coverage Results" MODIFIED="1529095288374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_ValidatorTester_ValidatorTester_test_correct_is_9x9_integers_field.coverage" NAME="Unittests for ValidatorTester.ValidatorTester.test_correct_is_9x9_integers_field Coverage Results" MODIFIED="1529147782328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/Common" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$sudokuFieldTemplate.coverage" NAME="sudokuFieldTemplate Coverage Results" MODIFIED="1529148570782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$line.coverage" NAME="line Coverage Results" MODIFIED="1527706324223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_get_value.coverage" NAME="Unittests for widgetTester.WidgetTester.test_get_value Coverage Results" MODIFIED="1529144841339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_ValidatorTester_ValidatorTester_test_incorrect_is_9x9_integers_field.coverage" NAME="Unittests for ValidatorTester.ValidatorTester.test_incorrect_is_9x9_integers_field Coverage Results" MODIFIED="1529147976328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/Common" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester Coverage Results" MODIFIED="1529090888240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$validationFunctions.coverage" NAME="validationFunctions Coverage Results" MODIFIED="1527264429463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Common" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$capureImageWindow.coverage" NAME="capureImageWindow Coverage Results" MODIFIED="1529091037190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_correct_calculate_middle.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_correct_calculate_middle Coverage Results" MODIFIED="1529090348703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester.coverage" NAME="Unittests for widgetTester.WidgetTester Coverage Results" MODIFIED="1529144566636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_incorrect_frame.coverage" NAME="Unittests for widgetTester.WidgetTester.test_incorrect_frame Coverage Results" MODIFIED="1529072404367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_incorrect_text_edit.coverage" NAME="Unittests for widgetTester.WidgetTester.test_incorrect_text_edit Coverage Results" MODIFIED="1529143528347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_correct_text_edit.coverage" NAME="Unittests for widgetTester.WidgetTester.test_correct_text_edit Coverage Results" MODIFIED="1529146623300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureVideoTester_CaptureVideoTester_test_del.coverage" NAME="Unittests for captureVideoTester.CaptureVideoTester.test_del Coverage Results" MODIFIED="1529095292252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init.coverage" NAME="Unittests for captureImageViewTester.CaptureImageViewTester.test_init Coverage Results" MODIFIED="1529095398888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$widgets.coverage" NAME="widgets Coverage Results" MODIFIED="1529146318874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field.coverage" NAME="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field Coverage Results" MODIFIED="1529150761987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_incorrect_init.coverage" NAME="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_incorrect_init Coverage Results" MODIFIED="1529148346482" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_incorrect_calculate_middle.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_incorrect_calculate_middle Coverage Results" MODIFIED="1529090610364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$tesseractLearn.coverage" NAME="tesseractLearn Coverage Results" MODIFIED="1527354536006" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_widgetTester_py.coverage" NAME="Unittests in widgetTester.py Coverage Results" MODIFIED="1529146626972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$video.coverage" NAME="video Coverage Results" MODIFIED="1527240674868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_correct_init.coverage" NAME="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_correct_init Coverage Results" MODIFIED="1529148093850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_set_background.coverage" NAME="Unittests for widgetTester.WidgetTester.test_set_background Coverage Results" MODIFIED="1529144177534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$lineDetection.coverage" NAME="lineDetection Coverage Results" MODIFIED="1528451244097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$CapureImageWindow.coverage" NAME="CapureImageWindow Coverage Results" MODIFIED="1529061997432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$line.coverage" NAME="line Coverage Results" MODIFIED="1527706324223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$captureVideo.coverage" NAME="captureVideo Coverage Results" MODIFIED="1529091031046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$learn.coverage" NAME="learn Coverage Results" MODIFIED="1527284375298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_in_captureImageViewTester_py.coverage" NAME="Unittests in captureImageViewTester.py Coverage Results" MODIFIED="1529095423220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_ValidatorTester_ValidatorTester.coverage" NAME="Unittests for ValidatorTester.ValidatorTester Coverage Results" MODIFIED="1529083551534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/Common" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_main_MainTest_test_simple.coverage" NAME="Unittests for main.MainTest.test_simple Coverage Results" MODIFIED="1526228830270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester Coverage Results" MODIFIED="1529090888240" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$validationFunctions.coverage" NAME="validationFunctions Coverage Results" MODIFIED="1527264429463" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Common" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$capureImageWindow.coverage" NAME="capureImageWindow Coverage Results" MODIFIED="1529091037190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester.coverage" NAME="Unittests for widgetTester.WidgetTester Coverage Results" MODIFIED="1529068821792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_correct_calculate_middle.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_correct_calculate_middle Coverage Results" MODIFIED="1529090348703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_correct_init.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_correct_init Coverage Results" MODIFIED="1529090870601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_incorrect_frame.coverage" NAME="Unittests for widgetTester.WidgetTester.test_incorrect_frame Coverage Results" MODIFIED="1529072404367" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_correct_init.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_correct_init Coverage Results" MODIFIED="1529151482345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_incorrect_button.coverage" NAME="Unittests for widgetTester.WidgetTester.test_incorrect_button Coverage Results" MODIFIED="1529068761310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_get_window_size.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_get_window_size Coverage Results" MODIFIED="1529090094260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_correct_button.coverage" NAME="Unittests for widgetTester.WidgetTester.test_correct_button Coverage Results" MODIFIED="1529068284915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$skLearn.coverage" NAME="skLearn Coverage Results" MODIFIED="1527780588874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Picture" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_ValidatorTester_ValidatorTester_test_correct_is_function.coverage" NAME="Unittests for ValidatorTester.ValidatorTester.test_correct_is_function Coverage Results" MODIFIED="1529087144204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/Common" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_mainTemplateTester_MainTemplateTester_test_set_to_screen_center.coverage" NAME="Unittests for mainTemplateTester.MainTemplateTester.test_set_to_screen_center Coverage Results" MODIFIED="1529090925786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$solutionView.coverage" NAME="solutionView Coverage Results" MODIFIED="1529154487074" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/Sodoku_Solver$test.coverage" NAME="test Coverage Results" MODIFIED="1526225261040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_correct_label.coverage" NAME="Unittests for widgetTester.WidgetTester.test_correct_label Coverage Results" MODIFIED="1529069038190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureVideoTester_CaptureVideoTester_test_del.coverage" NAME="Unittests for captureVideoTester.CaptureVideoTester.test_del Coverage Results" MODIFIED="1529095292252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init.coverage" NAME="Unittests for captureImageViewTester.CaptureImageViewTester.test_init Coverage Results" MODIFIED="1529095398888" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI" />
-    <SUITE FILE_PATH="coverage/Sudoku_Solver$mainTester.coverage" NAME="mainTester Coverage Results" MODIFIED="1529095460285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$capureImageView.coverage" NAME="capureImageView Coverage Results" MODIFIED="1529154998588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$Unittests_for_widgetTester_WidgetTester_test_correct_get_value.coverage" NAME="Unittests for widgetTester.WidgetTester.test_correct_get_value Coverage Results" MODIFIED="1529144941425" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests/GUI/Framework" />
+    <SUITE FILE_PATH="coverage/Sudoku_Solver$mainTester.coverage" NAME="mainTester Coverage Results" MODIFIED="1529150852640" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Tests" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="sudokuFieldTemplateTester.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="capureImageView.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/capureImageView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -79,43 +108,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/tkinter/__init__.py">
+      <file leaf-file-name="widgets.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/Framework/widgets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="1130" column="0" lean-forward="false" selection-start-line="1130" selection-start-column="0" selection-end-line="1130" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widgetTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_template.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI/Framework/main_template.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="29" />
+            <state relative-caret-position="-252">
+              <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
               <folding>
-                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainTester.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/mainTester.py">
+      <file leaf-file-name="askIfCorrectView.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/askIfCorrectView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="441">
+              <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidatorTester.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/Common/ValidatorTester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="73">
+              <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="102" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -124,43 +145,53 @@
       <file leaf-file-name="mainTemplateTester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="861">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="60" selection-end-column="92" />
-              <folding>
-                <element signature="e#0#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="diff_tools.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/teamcity/diff_tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-473">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="241">
+              <caret line="53" column="108" lean-forward="false" selection-start-line="53" selection-start-column="108" selection-end-line="53" selection-end-column="108" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="captureVideo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI/captureVideo.py">
+      <file leaf-file-name="mainTemplate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/Framework/mainTemplate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+            <state relative-caret-position="693">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="solutionView.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/solutionView.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="captureVideoTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/captureVideoTester.py">
+      <file leaf-file-name="sudokuFieldTemplate.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="693">
+              <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
               <folding>
-                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mainTester.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/mainTester.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,19 +245,26 @@
         <option value="$PROJECT_DIR$/Tests/Common/testValidator.py" />
         <option value="$PROJECT_DIR$/Tests/mainTester.py" />
         <option value="$PROJECT_DIR$/GUI/variables.py" />
-        <option value="$PROJECT_DIR$/Tests/Common/ValidatorTester.py" />
-        <option value="$PROJECT_DIR$/GUI/Framework/widgets.py" />
-        <option value="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" />
         <option value="$PROJECT_DIR$/GUI/capturePictureView.py" />
-        <option value="$PROJECT_DIR$/Common/validationFunctions.py" />
         <option value="$PROJECT_DIR$/GUI/capureImageWindow.py" />
         <option value="$PROJECT_DIR$/GUI/Framework/main_template.py" />
-        <option value="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" />
         <option value="$PROJECT_DIR$/Tests/GUI/captureImageWindowTester.py" />
-        <option value="$PROJECT_DIR$/GUI/captureVideo.py" />
-        <option value="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" />
         <option value="$PROJECT_DIR$/Tests/GUI/captureImageViewTester.py" />
+        <option value="$PROJECT_DIR$/GUI/captureVideo.py" />
+        <option value="$PROJECT_DIR$/GUI/Framework/templateWithSudokuField.py" />
+        <option value="$PROJECT_DIR$/GUI/variables/variables.py" />
+        <option value="$PROJECT_DIR$/GUI/Framework/widgets.py" />
+        <option value="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" />
+        <option value="$PROJECT_DIR$/Tests/Common/ValidatorTester.py" />
+        <option value="$PROJECT_DIR$/Common/validationFunctions.py" />
+        <option value="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" />
+        <option value="$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py" />
+        <option value="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" />
         <option value="$PROJECT_DIR$/GUI/capureImageView.py" />
+        <option value="$PROJECT_DIR$/GUI/askIfCorrectView.py" />
+        <option value="$PROJECT_DIR$/GUI/solutionView.py" />
+        <option value="$PROJECT_DIR$/GUI/Framework/mainTemplate.py" />
+        <option value="$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py" />
       </list>
     </option>
   </component>
@@ -257,7 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -273,26 +310,26 @@
             <path>
               <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="Framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
+              <item name="Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -321,7 +358,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mainTester">
+  <component name="RunManager" selected="Python.capureImageView">
+    <configuration name="capureImageView" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Sodoku-Solver" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/capureImageView.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="mainTester" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,80 +397,69 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="Unittests for captureImageViewTester.CaptureImageViewTester.test_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="solutionView" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GUI" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Sodoku-Solver" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI/solutionView.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Unittests for mainTemplateTester.MainTemplateTester.test_correct_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI/Framework" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Sodoku-Solver" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;captureImageViewTester.CaptureImageViewTester.test_init&quot;" />
+      <option name="_new_target" value="&quot;mainTemplateTester.MainTemplateTester.test_correct_init&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
     </configuration>
-    <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_del" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in sudokuFieldTemplateTester.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI/Framework" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Sodoku-Solver" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;captureVideoTester.CaptureVideoTester.test_del&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_init" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Sodoku-Solver" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;captureVideoTester.CaptureVideoTester.test_init&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-    </configuration>
-    <configuration name="Unittests in captureImageViewTester.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Tests/GUI" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Sodoku-Solver" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests/GUI/captureImageViewTester.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.mainTester" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests for captureImageViewTester.CaptureImageViewTester.test_init" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for captureVideoTester.CaptureVideoTester.test_init" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for captureVideoTester.CaptureVideoTester.test_del" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in captureImageViewTester.py" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in sudokuFieldTemplateTester.py" />
+      <item index="1" class="java.lang.String" itemvalue="Python.mainTester" />
+      <item index="2" class="java.lang.String" itemvalue="Python.capureImageView" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for mainTemplateTester.MainTemplateTester.test_correct_init" />
+      <item index="4" class="java.lang.String" itemvalue="Python.solutionView" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.mainTester" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in captureImageViewTester.py" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for captureImageViewTester.CaptureImageViewTester.test_init" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for captureVideoTester.CaptureVideoTester.test_del" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for captureVideoTester.CaptureVideoTester.test_init" />
+        <item index="0" class="java.lang.String" itemvalue="Python.capureImageView" />
+        <item index="1" class="java.lang.String" itemvalue="Python.solutionView" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests for mainTemplateTester.MainTemplateTester.test_correct_init" />
+        <item index="3" class="java.lang.String" itemvalue="Python.mainTester" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in sudokuFieldTemplateTester.py" />
       </list>
     </recent_temporary>
   </component>
@@ -478,35 +523,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init - 2018.06.15 at 22h 35m 36s.xml">
-      <configuration name="Unittests for captureImageViewTester.CaptureImageViewTester.test_init" configurationId="tests" />
+    <history-entry file="Unittests_for_mainTemplateTester_MainTemplateTester_test_correct_init - 2018.06.16 at 14h 18m 02s.xml">
+      <configuration name="Unittests for mainTemplateTester.MainTemplateTester.test_correct_init" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init - 2018.06.15 at 22h 41m 55s.xml">
-      <configuration name="Unittests for captureImageViewTester.CaptureImageViewTester.test_init" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 13h 56m 52s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init - 2018.06.15 at 22h 43m 16s.xml">
-      <configuration name="Unittests for captureImageViewTester.CaptureImageViewTester.test_init" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 13h 58m 32s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureImageViewTester_CaptureImageViewTester_test_init - 2018.06.15 at 22h 43m 40s.xml">
-      <configuration name="Unittests for captureImageViewTester.CaptureImageViewTester.test_init" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 14h 01m 00s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureVideoTester_CaptureVideoTester - 2018.06.15 at 22h 32m 47s.xml">
-      <configuration name="Unittests for captureVideoTester.CaptureVideoTester" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 14h 02m 11s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureVideoTester_CaptureVideoTester_test_del - 2018.06.15 at 22h 41m 33s.xml">
-      <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_del" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 14h 03m 22s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureVideoTester_CaptureVideoTester_test_get_frame - 2018.06.15 at 22h 32m 00s.xml">
-      <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_get_frame" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 14h 04m 24s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureVideoTester_CaptureVideoTester_test_get_frame - 2018.06.15 at 22h 33m 15s.xml">
-      <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_get_frame" configurationId="tests" />
+    <history-entry file="Unittests_for_sudokuFieldTemplateTester_SudokuFieldTemplateTester_test_generate_field - 2018.06.16 at 14h 06m 02s.xml">
+      <configuration name="Unittests for sudokuFieldTemplateTester.SudokuFieldTemplateTester.test_generate_field" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_captureVideoTester_CaptureVideoTester_test_init - 2018.06.15 at 22h 41m 29s.xml">
-      <configuration name="Unittests for captureVideoTester.CaptureVideoTester.test_init" configurationId="tests" />
+    <history-entry file="Unittests_in_sudokuFieldTemplateTester_py - 2018.06.16 at 14h 06m 06s.xml">
+      <configuration name="Unittests in sudokuFieldTemplateTester.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_captureImageViewTester_py - 2018.06.15 at 22h 44m 16s.xml">
-      <configuration name="Unittests in captureImageViewTester.py" configurationId="tests" />
+    <history-entry file="Unittests_in_sudokuFieldTemplateTester_py - 2018.06.16 at 14h 07m 27s.xml">
+      <configuration name="Unittests in sudokuFieldTemplateTester.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -515,17 +560,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42759407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42759407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13426423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1358754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2094522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46066135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46066135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -534,6 +579,28 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42759407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1358754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2094522" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46066135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -555,34 +622,27 @@
           <line>91</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py</url>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="33" lean-forward="false" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/mainTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video.py" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3906">
           <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -713,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -721,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="8" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,9 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2688">
           <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -740,7 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,60 +811,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
           <caret line="105" column="6" lean-forward="false" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/capturePictureView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/variables/variables.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Common/ValidatorTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#29#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/validationFunctions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="57" column="35" lean-forward="true" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/Framework/widgets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="30" lean-forward="false" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/widgets.py" />
+    <entry file="file://$PROJECT_DIR$/GUI/capturePictureView.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
@@ -822,80 +826,79 @@
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pycharm/teamcity/diff_tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
+        <state relative-caret-position="567">
           <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/Framework/main_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="40" column="8" lean-forward="false" selection-start-line="40" selection-start-column="8" selection-end-line="40" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/captureVideo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="38" lean-forward="false" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="60" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
+        <state relative-caret-position="23688">
           <caret line="1130" column="0" lean-forward="false" selection-start-line="1130" selection-start-column="0" selection-end-line="1130" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/GUI/captureVideoTester.py">
+    <entry file="file://$PROJECT_DIR$/Tests/GUI/captureImageViewTester.py" />
+    <entry file="file://$PROJECT_DIR$/GUI/variables/variables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="17" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/GUI/captureImageViewTester.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="189">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#29#0" expanded="false" />
+            <marker date="1529146623251" expanded="true" signature="1281:1913" ph="..." />
+            <marker date="1529146623251" expanded="true" signature="2124:2541" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/validationFunctions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="73" column="32" lean-forward="false" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/capureImageView.py">
+    <entry file="file://$PROJECT_DIR$/GUI/captureVideo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="35" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/GUI/captureVideoTester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Common/ValidatorTester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="102" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <element signature="e#0#14#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -905,6 +908,72 @@
         <state relative-caret-position="126">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="53" column="108" lean-forward="false" selection-start-line="53" selection-start-column="108" selection-end-line="53" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Framework/widgets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252">
+          <caret line="33" column="32" lean-forward="false" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/capureImageView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/askIfCorrectView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/solutionView.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Framework/mainTemplate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="42" column="8" lean-forward="false" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -12,3 +12,9 @@ TITLE_TEXT = "Sudoku Solver"
 
 BORDER = 10
 
+SUDOKU_SQUARE_SIZE = 2  # how big are the squares in the field
+NUMBERS_SIZE = 20
+NUMBERS_FONT = "Courier"
+SQUARE_COLOR = "white"
+SQUARE_ERR_COLOR = "firebrick1"
+

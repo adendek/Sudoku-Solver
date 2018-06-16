@@ -1,4 +1,4 @@
-from GUI.captureVideo import CaptureVideo
+from GUI.capureImageView import CaptureVideo
 from GUI.capureImageView import CaptureImageView
 import cv2
 from unittest import TestCase

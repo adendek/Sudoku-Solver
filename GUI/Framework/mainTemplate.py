@@ -26,6 +26,7 @@ class MainTemplate(tkinter.Tk):
             self.left_button = widgets.Button(self.left_button_frame, bt1_text, bt1_funct)
             self.right_button = widgets.Button(self.right_button_frame, bt2_text, bt2_funct)
 
+            self.protocol("WM_DELETE_WINDOW", self._on_destroy)
             self.resizable(False, False)
         else:
             raise ValueError("Inappropriate arguments when creating a main template!")
@@ -43,3 +44,7 @@ class MainTemplate(tkinter.Tk):
         width, height = self._get_window_size()
         x, y = self._calculate_middle(width, height)
         self.geometry('+{}+{}'.format(x, y - 40))
+
+    def _on_destroy(self):
+        self.destroy()
+        exit(0)

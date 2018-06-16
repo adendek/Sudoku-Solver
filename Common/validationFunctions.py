@@ -62,3 +62,15 @@ class Validator:
             return True
         return callable(value)
 
+    @staticmethod
+    def is_9x9_integers_field(value):
+        if len(value) == 9 and type(value) == list:
+            for row in value:
+                if len(row) == 9 and type(value) == list:
+                    for column in row:
+                        if not Validator.is_type(column, int) or not 0 <= column <= 9:
+                            return False
+                else:
+                    return False
+            return True
+        return False

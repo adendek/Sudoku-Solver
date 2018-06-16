@@ -1,5 +1,5 @@
 from Tests.GUI.Framework.widgetTester import test  # simple function
-from GUI.Framework.main_template import MainTemplate
+from GUI.Framework.mainTemplate import MainTemplate
 import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
 from unittest import TestCase
@@ -51,6 +51,7 @@ class MainTemplateTester(TestCase):
         self.assertEqual(type(template.right_button), widgets.Button)
         self.assertEqual(type(template.title_label), widgets.Title)
         self.assertEqual(type(template.info_label), widgets.Label)
+        self.assertEqual(template.protocol("WM_DELETE_WINDOW")[-11:], "_on_destroy")  # name of the function
         self.assertEqual(template.left_button.config("command")[4][-4:], "test")  # if function is set (to test)
         self.assertEqual(template.right_button.config("command")[4][-4:], "test")  # if function is set (to test)
         self.assertEqual(template.right_button.config("text")[4], second_button_text)  # if function is set (to test)
