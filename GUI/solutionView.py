@@ -1,9 +1,15 @@
 from GUI.Framework import sudokuFieldTemplate
+from Common.validationFunctions import Validator
+from Common.Errors import InappropriateArgsError
 
 
 class SolutionView(sudokuFieldTemplate.SudokuFieldTemplate):
     def __init__(self, field, loaded_from):
-        super().__init__("Take another picture", self._go_to_correct, field, loaded_from, readonly=True)
+        if Validator.is_9x9_integers_field(field):
+            super().__init__("Change Digits", self._go_to_correct, field, loaded_from, readonly=True)
+            self.set_info_label("This is the solution to the given sudoku!")
+        else:
+            raise InappropriateArgsError("creating solution View!")
 
     def _go_to_correct(self):
         self.destroy()

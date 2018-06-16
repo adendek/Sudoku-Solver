@@ -1,6 +1,7 @@
 import tkinter
 import GUI.variables.variables as var
 from Common.validationFunctions import Validator
+from Common.Errors import InappropriateArgsError
 
 
 class TextEdit(tkinter.Entry):
@@ -14,12 +15,11 @@ class TextEdit(tkinter.Entry):
             self.grid(kwargs)
             self.config(justify='center', width=var.SUDOKU_SQUARE_SIZE, font=(var.NUMBERS_FONT, var.NUMBERS_SIZE))
             if number > 0:  # 0 is empty
-                self.insert(0, str(number))
                 self.value.set(str(number))
             if readonly:
                 self.config(state='readonly')
         else:
-            raise ValueError("Inappropriate arguments when creating an entry!")
+            raise InappropriateArgsError("creating an entry!")
 
     def get_value(self):
         return self.value.get()
@@ -31,7 +31,7 @@ class TextEdit(tkinter.Entry):
             self.config({"background": var.SQUARE_ERR_COLOR})
 
     def _limit_size(self, *args):
-        value = self.value.get()
+        value = self.get_value()
         if len(value) > 0 and value[0] not in "123456789":  # it is not a number
             self.value.set("")
             self._set_background()  # set error color
@@ -48,18 +48,18 @@ class Frame(tkinter.Frame):
             super().__init__(master=parent, height=height, width=width)
             self.grid(kwargs)
         else:
-            raise ValueError("Inappropriate arguments when creating a frame!")
+            raise InappropriateArgsError("creating a frame!")
 
 
 class Button(tkinter.Button):
     def __init__(self, parent, text, action, **kwargs):
         if (Validator.is_type(parent, tkinter.Tk) or Validator.is_type(parent, Frame)) \
                 and Validator.is_type(text, str) and Validator.is_function(action):
-            super().__init__(master=parent, text=text, command=action, width=10)
+            super().__init__(master=parent, text=text, command=action, width=12)
             self.config(bg=var.BUTTON_BACKGROUND, fg=var.BUTTON_TEXTCOLOR)
             self.grid(kwargs)
         else:
-            raise ValueError("Inappropriate arguments when creating a button!")
+            raise InappropriateArgsError("creating a button!")
 
 
 class Label(tkinter.Label):
@@ -69,7 +69,7 @@ class Label(tkinter.Label):
             self.config(font=(var.LABEL_FONT, var.LABEL_FONT_SIZE), fg=var.LABEL_TEXTCOLOR)
             self.grid(kwargs)
         else:
-            raise ValueError("Inappropriate arguments when creating a label!")
+            raise InappropriateArgsError("creating a label!")
 
 
 class Title(Label):

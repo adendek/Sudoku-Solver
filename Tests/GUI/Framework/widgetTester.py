@@ -3,6 +3,7 @@ from GUI.Framework import widgets
 from GUI.variables import variables
 import tkinter
 from tkinter import TclError
+from Common.Errors import InappropriateArgsError
 
 
 class WidgetTester(TestCase):
@@ -34,15 +35,15 @@ class WidgetTester(TestCase):
 
     def test_incorrect_text_edit(self):
         root = tkinter.Tk()
-        self.assertRaises(ValueError, lambda: widgets.TextEdit(root, -1))
-        self.assertRaises(ValueError, lambda: widgets.TextEdit(root, 1.1))
-        self.assertRaises(ValueError, lambda: widgets.TextEdit(root, "1"))
-        self.assertRaises(ValueError, lambda: widgets.TextEdit(root, 10))  # max number should be 9
-        self.assertRaises(ValueError, lambda: widgets.TextEdit("not a root!", 1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit(root, -1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit(root, 1.1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit(root, "1"))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit(root, 10))  # max number should be 9
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit("not a root!", 1))
         self.assertRaises(TclError, lambda: widgets.TextEdit(root, 1, wrong="This does not exist!"))
         self.assertRaises(TclError, lambda: widgets.TextEdit(root, 1, row="Should be integer!"))
-        self.assertRaises(ValueError, lambda: widgets.TextEdit("not a root!", 1, 3))
-        self.assertRaises(ValueError, lambda: widgets.TextEdit("not a root!", 1, "1"))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit("not a root!", 1, 3))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.TextEdit("not a root!", 1, "1"))
 
     def test_correct_text_edit(self):
         root = tkinter.Tk()
@@ -50,10 +51,9 @@ class WidgetTester(TestCase):
         input_number2 = 1
         entry = widgets.TextEdit(root, input_number)
         entry2 = widgets.TextEdit(root, input_number2, readonly=True)
-        self.assertNotEqual(entry.get(), str(input_number))  # it shouldn't be set if number is 0
-        self.assertEqual(entry2.get(), str(input_number2))
+        self.assertNotEqual(entry.get_value(), str(input_number))  # it shouldn't be set if number is 0
+        self.assertEqual(entry2.get_value(), str(input_number2))
         self.assertEqual(entry.cget("justify"), "center")
-        self.assertEqual(entry2.value.get(), str(input_number2))
         self.assertEqual(type(entry.value), tkinter.StringVar)
         self.assertEqual(entry.cget("width"), variables.SUDOKU_SQUARE_SIZE)
         self.assertEqual(entry.cget("font"), variables.NUMBERS_FONT + " " + str(variables.NUMBERS_SIZE))
@@ -62,8 +62,8 @@ class WidgetTester(TestCase):
 
     def test_incorrect_frame(self):
         root = tkinter.Tk()
-        self.assertRaises(ValueError, lambda: widgets.Frame("Not cool", 1, 1))
-        self.assertRaises(ValueError, lambda: widgets.Frame(root, -2, -1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Frame("Not cool", 1, 1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Frame(root, -2, -1))
         self.assertRaises(TclError, lambda: widgets.Frame(root, 1, 1, wrong="This does not exist!"))
         self.assertRaises(TclError, lambda: widgets.Frame(root, 1, 1, row="Should be integer!"))
 
@@ -77,8 +77,8 @@ class WidgetTester(TestCase):
     def test_incorrect_title(self):
         root = tkinter.Tk()
         text = "Correct"
-        self.assertRaises(ValueError, lambda: widgets.Title("Not cool", text))
-        self.assertRaises(ValueError, lambda: widgets.Title(root, 1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Title("Not cool", text))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Title(root, 1))
         self.assertRaises(TclError, lambda: widgets.Title(root, text, wrong="This does not exist!"))
         self.assertRaises(TclError, lambda: widgets.Title(root, text, row="Should be integer!"))
 
@@ -93,8 +93,8 @@ class WidgetTester(TestCase):
     def test_incorrect_label(self):
         root = tkinter.Tk()
         text = "Correct"
-        self.assertRaises(ValueError, lambda: widgets.Label("Not cool", text))
-        self.assertRaises(ValueError, lambda: widgets.Label(root, 1))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Label("Not cool", text))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Label(root, 1))
         self.assertRaises(TclError, lambda: widgets.Label(root, text, wrong="This does not exist!"))
         self.assertRaises(TclError, lambda: widgets.Label(root, text, row="Should be integer!"))
 
@@ -109,9 +109,9 @@ class WidgetTester(TestCase):
     def test_incorrect_button(self):
         root = tkinter.Tk()
         text = "Correct"
-        self.assertRaises(ValueError, lambda: widgets.Button("Not cool", text, test))
-        self.assertRaises(ValueError, lambda: widgets.Button(root, 1, test))
-        self.assertRaises(ValueError, lambda: widgets.Button(root, text, text))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Button("Not cool", text, test))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Button(root, 1, test))
+        self.assertRaises(InappropriateArgsError, lambda: widgets.Button(root, text, text))
         self.assertRaises(TclError, lambda: widgets.Button(root, text, test, wrong="This does not exist!"))
         self.assertRaises(TclError, lambda: widgets.Button(root, text, test, row="Should be integer!"))
 

@@ -19,6 +19,8 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         # Create a canvas that can fit the above video source size
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
         self.canvas.pack()
+        self.set_info_label("Show the picture of sudoku puzzle to the camera.\n"
+                            "Watch out that there will be a good light and try to have steady hand :)")
 
         self._update()
 

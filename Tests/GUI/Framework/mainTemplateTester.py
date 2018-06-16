@@ -2,10 +2,23 @@ from Tests.GUI.Framework.widgetTester import test  # simple function
 from GUI.Framework.mainTemplate import MainTemplate
 import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
+from Common.Errors import InappropriateArgsError
 from unittest import TestCase
 
 
 class MainTemplateTester(TestCase):
+    def test_incorrect_set_info_text(self):
+        template = MainTemplate("first", test, "second", test)
+        self.assertRaises(InappropriateArgsError, lambda: template.set_info_label(1))
+        self.assertRaises(InappropriateArgsError, lambda: template.set_info_label(["not", "I", "hope"]))
+        self.assertRaises(InappropriateArgsError, lambda: template.set_info_label(-1.2))
+
+    def test_correct_set_info_text(self):
+        template = MainTemplate("first", test, "second", test)
+        before = template.info_label["text"]
+        template.set_info_label("32435664532sdadc?-")
+        self.assertNotEqual(before, template.info_label["text"])
+
     def test_set_to_screen_center(self):
         template = MainTemplate("first", test, "second", test)
         before = template.geometry()
@@ -15,9 +28,9 @@ class MainTemplateTester(TestCase):
 
     def test_incorrect_calculate_middle(self):
         template = MainTemplate("first", test, "second", test)
-        self.assertRaises(ValueError, lambda: template._calculate_middle("1", 20))
-        self.assertRaises(ValueError, lambda: template._calculate_middle(1, "20"))
-        self.assertRaises(ValueError, lambda: template._calculate_middle(-1, -0))
+        self.assertRaises(InappropriateArgsError, lambda: template._calculate_middle("1", 20))
+        self.assertRaises(InappropriateArgsError, lambda: template._calculate_middle(1, "20"))
+        self.assertRaises(InappropriateArgsError, lambda: template._calculate_middle(-1, -0))
 
     def test_correct_calculate_middle(self):
         template = MainTemplate("first", test, "second", test)
@@ -31,12 +44,12 @@ class MainTemplateTester(TestCase):
         self.assertEqual(template._get_window_size(), (template.winfo_width(), template.winfo_height()))
 
     def test_incorrect_init(self):
-        self.assertRaises(ValueError, lambda: MainTemplate(1, test, "ok", test))
-        self.assertRaises(ValueError, lambda: MainTemplate("ok", test, 1, test))
-        self.assertRaises(ValueError, lambda: MainTemplate("ok", test, ["almost", "or is it?"], test))
-        self.assertRaises(ValueError, lambda: MainTemplate("ok", "hmm", "ok", test))
-        self.assertRaises(ValueError, lambda: MainTemplate("ok", test, "ok", "hmm"))
-        self.assertRaises(ValueError, lambda: MainTemplate("ok", test, "ok", 3))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate(1, test, "ok", test))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate("ok", test, 1, test))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate("ok", test, ["almost", "or is it?"], test))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate("ok", "hmm", "ok", test))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate("ok", test, "ok", "hmm"))
+        self.assertRaises(InappropriateArgsError, lambda: MainTemplate("ok", test, "ok", 3))
 
     def test_correct_init(self):
         first_button_text = "first button"

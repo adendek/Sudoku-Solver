@@ -1,7 +1,9 @@
 from Common.validationFunctions import Validator
+from Common.Errors import InappropriateArgsError
 import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
 import tkinter
+import sys
 
 
 class MainTemplate(tkinter.Tk):
@@ -14,7 +16,7 @@ class MainTemplate(tkinter.Tk):
             self.title_label = widgets.Title(self.title_frame, var.TITLE_TEXT)
 
             self.info_frame = widgets.Frame(self, row=3, padx=var.BORDER, pady=var.BORDER)
-            self.info_label = widgets.Label(self.info_frame, "Some info about the thing.")
+            self.info_label = widgets.Label(self.info_frame, "")
 
             self.bot_frame = widgets.Frame(self, row=4, sticky="ew", padx=var.BORDER, pady=var.BORDER)
             self.bot_frame.grid_columnconfigure(0, weight=1)
@@ -29,7 +31,14 @@ class MainTemplate(tkinter.Tk):
             self.protocol("WM_DELETE_WINDOW", self._on_destroy)
             self.resizable(False, False)
         else:
-            raise ValueError("Inappropriate arguments when creating a main template!")
+            raise InappropriateArgsError("a main template!")
+
+    def set_info_label(self, text):
+        if not isinstance(text, list) and Validator.is_type(text, str):
+            self.info_label["text"] = text
+            return text
+        else:
+            raise InappropriateArgsError("setting info label text!")
 
     def _get_window_size(self):
         return self.winfo_width(), self.winfo_height()
@@ -37,7 +46,7 @@ class MainTemplate(tkinter.Tk):
     def _calculate_middle(self, width, height):
         if Validator.is_positive_number([width, height]):
             return (self.winfo_screenwidth() // 2) - (width // 2), (self.winfo_screenheight() // 2) - (height // 2)
-        raise ValueError("Inappropriate arguments when calculating center of the screen!")
+        raise InappropriateArgsError("calculating center of the screen!")
 
     def _set_to_screen_center(self):
         self.update_idletasks()
@@ -47,4 +56,4 @@ class MainTemplate(tkinter.Tk):
 
     def _on_destroy(self):
         self.destroy()
-        exit(0)
+        sys.exit(0)
