@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+.idea/workspace
+
 __pycache__/
 *.py[cod]
 *$py.class
@@ -104,5 +106,3 @@ venv.bak/
 .mypy_cache/
 
 .idea/
-.idea/workspace.xml
-

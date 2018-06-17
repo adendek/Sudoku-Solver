@@ -1,11 +1,12 @@
-import tkinter
-import PIL.ImageTk
-import PIL.Image
 import GUI.Framework.mainTemplate
 import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
 from tkinter import TclError
 from GUI import askIfCorrectView
+from ImageProcessing.ProcessImage import ProcessImage
+import tkinter
+import PIL.ImageTk
+import PIL.Image
 import cv2
 
 
@@ -19,8 +20,10 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         # Create a canvas that can fit the above video source size
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
         self.canvas.pack()
-        self.set_info_label("Show the picture of sudoku puzzle to the camera.\n"
+        self.set_info_label("Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n"
                             "Watch out that there will be a good light and try to have steady hand :)")
+
+        self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
 
         self._update()
 
@@ -28,23 +31,15 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
 
         self.mainloop()
 
+    def _pressed_enter(self, event):
+        self._take_picture()
+
     def renew_video(self):
         self.video = CaptureVideo()
 
     def _take_picture(self):
         image = self.video.get_image()
-        # TODO: from image get field and delete lower field
-        field = [
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-        ]
+        field = ProcessImage(image).get_field_matrix()
         self.withdraw()
         self.video.video.release()  # stop filming
         askIfCorrectView.AskIfCorrectView(field, self)

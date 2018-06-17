@@ -113,23 +113,23 @@ def show_output():
         test_classifier(rfor_class, digits, pic)
         print("-------------------------------------")
 
-#
-# digits = datasets.load_digits()
-# pic = get_pic("1.jpg")
-#
-# import warnings
-# warnings.filterwarnings("ignore")
-# # test_classifier(svm_class, digits, pic)
-# # test_classifier(knn, digits, pic)
-# # test_classifier(tree_class, digits, pic)
-# # test_classifier(neur_class, digits, pic)
-# # test_classifier(rfor_class, digits, pic)
-#
-# #optimize_knn(digits, pic)
-# #optimize_svm(digits, pic)
-# #optimize_tree(digits, pic)
-# #optimize_neuro(digits, pic)
-# #optimize_forest(digits, pic)
+
+digits = datasets.load_digits()
+pic = get_pic("1.jpg")
+
+import warnings
+warnings.filterwarnings("ignore")
+# test_classifier(svm_class, digits, pic)
+# test_classifier(knn, digits, pic)
+# test_classifier(tree_class, digits, pic)
+# test_classifier(neur_class, digits, pic)
+# test_classifier(rfor_class, digits, pic)
+
+#optimize_knn(digits, pic)
+#optimize_svm(digits, pic)
+#optimize_tree(digits, pic)
+#optimize_neuro(digits, pic)
+#optimize_forest(digits, pic)
 # show_output()
 
 
