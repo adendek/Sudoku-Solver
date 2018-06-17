@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7be451f6-92b5-45a3-bffe-1799ccb4a32e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Common/Errors.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/askIfCorrectViewTester.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Tests/GUI/solutionViewTester.py" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GUI/Framework/mainTemplate.py" afterPath="$PROJECT_DIR$/GUI/Framework/mainTemplate.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py" afterPath="$PROJECT_DIR$/GUI/Framework/sudokuFieldTemplate.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/Framework/widgets.py" afterPath="$PROJECT_DIR$/GUI/Framework/widgets.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/askIfCorrectView.py" afterPath="$PROJECT_DIR$/GUI/askIfCorrectView.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/capureImageView.py" afterPath="$PROJECT_DIR$/GUI/capureImageView.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/solutionView.py" afterPath="$PROJECT_DIR$/GUI/solutionView.py" />
-      <change beforePath="$PROJECT_DIR$/GUI/variables/variables.py" afterPath="$PROJECT_DIR$/GUI/variables/variables.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py" />
-      <change beforePath="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" afterPath="$PROJECT_DIR$/Tests/GUI/captureVideoTester.py" />
+      <change beforePath="$PROJECT_DIR$/Picture/1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/4.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/5.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/7.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/9.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Picture/line.py" afterPath="$PROJECT_DIR$/ImageProcessing/line.py" />
+      <change beforePath="$PROJECT_DIR$/Picture/lineDetection.py" afterPath="$PROJECT_DIR$/ImageProcessing/lineDetection.py" />
+      <change beforePath="$PROJECT_DIR$/Picture/numberSquare.py" afterPath="$PROJECT_DIR$/ImageProcessing/numberSquare.py" />
+      <change beforePath="$PROJECT_DIR$/Picture/skLearn.py" afterPath="$PROJECT_DIR$/MachineLearning/skLearn.py" />
+      <change beforePath="$PROJECT_DIR$/Picture/sudoku.jpg" afterPath="$PROJECT_DIR$/ImageProcessing/sudoku.jpg" />
+      <change beforePath="$PROJECT_DIR$/Picture/sudokuNice.jpg" afterPath="$PROJECT_DIR$/ImageProcessing/sudokuNice.jpg" />
+      <change beforePath="$PROJECT_DIR$/Picture/sudokufield.jpg" afterPath="$PROJECT_DIR$/ImageProcessing/sudokufield.jpg" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,40 +92,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="sudokuFieldTemplateTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="widgetTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2294">
-              <caret line="113" column="48" lean-forward="false" selection-start-line="113" selection-start-column="48" selection-end-line="113" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="askIfCorrectViewTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/askIfCorrectViewTester.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="captureVideoTester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/GUI/captureVideoTester.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -137,8 +105,8 @@
       <file leaf-file-name="solutionViewTester.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/GUI/solutionViewTester.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+            <state relative-caret-position="126">
+              <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -146,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="capureImageView.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="capureImageView.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/capureImageView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+            <state relative-caret-position="1743">
+              <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -158,11 +126,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainTemplateTester.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/mainTemplateTester.py">
+      <file leaf-file-name="lineDetection.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ImageProcessing/lineDetection.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="48" />
+            <state relative-caret-position="651">
+              <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="numberSquare.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ImageProcessing/numberSquare.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="skLearn.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MachineLearning/skLearn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="line.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ImageProcessing/line.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="987">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -172,7 +172,7 @@
         <entry file="file://$PROJECT_DIR$/Tests/mainTester.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,8 +191,8 @@
       <file leaf-file-name="solutionView.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/solutionView.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="189">
+              <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -308,6 +308,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -318,55 +320,17 @@
             <path>
               <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Common" type="462c0819:PsiDirectoryNode" />
+              <item name="ImageProcessing" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
               <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="variables" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="Common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sudoku-Solver" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sudoku-Solver" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="GUI" type="462c0819:PsiDirectoryNode" />
-              <item name="Framework" type="462c0819:PsiDirectoryNode" />
+              <item name="MachineLearning" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,10 +341,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\MachineLearning" />
+      <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\ImageProcessing" />
       <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\GUI\variables" />
       <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\GUI" />
       <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\Tests\Common" />
-      <recent name="C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -589,15 +554,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42759407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42759407" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13748658" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13909775" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2094522" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -651,7 +615,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Picture/lineDetection.py</url>
+          <url>file://$PROJECT_DIR$/ImageProcessing/lineDetection.py</url>
           <line>91</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
@@ -742,16 +706,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Picture/secondtry.py" />
     <entry file="file://$PROJECT_DIR$/Picture/tesseractLearn.py" />
-    <entry file="file://$PROJECT_DIR$/Picture/sudokuNice.jpg">
+    <entry file="file://$PROJECT_DIR$/ImageProcessing/sudokuNice.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Picture/line.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
@@ -762,30 +719,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Picture/roi.png" />
-    <entry file="file://$PROJECT_DIR$/Picture/skLearn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2688">
-          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Picture/numberSquare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Picture/lineDetection.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1927">
-          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -799,7 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="726" column="0" lean-forward="false" selection-start-line="726" selection-start-column="0" selection-end-line="726" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -816,7 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,7 +762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="1667" column="0" lean-forward="false" selection-start-line="1667" selection-start-column="0" selection-end-line="1667" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,19 +773,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/Framework/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/Framework/test.py" />
     <entry file="file://$PROJECT_DIR$/Common/validationFunctions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1533">
           <caret line="73" column="32" lean-forward="false" selection-start-line="73" selection-start-column="32" selection-end-line="73" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -864,7 +785,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
           <caret line="92" column="0" lean-forward="false" selection-start-line="92" selection-start-column="0" selection-end-line="102" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,14 +845,14 @@
     <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/sudokuFieldTemplateTester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="48" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/GUI/Framework/widgetTester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2294">
+        <state relative-caret-position="2268">
           <caret line="113" column="48" lean-forward="false" selection-start-line="113" selection-start-column="48" selection-end-line="113" selection-end-column="48" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
@@ -942,7 +862,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/GUI/askIfCorrectViewTester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
+        <state relative-caret-position="903">
           <caret line="46" column="36" lean-forward="false" selection-start-line="46" selection-start-column="36" selection-end-line="46" selection-end-column="36" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
@@ -952,8 +872,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/solutionView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="189">
+          <caret line="11" column="18" lean-forward="false" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
@@ -970,8 +890,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tests/GUI/solutionViewTester.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="126">
+          <caret line="9" column="40" lean-forward="false" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -981,7 +901,7 @@
     <entry file="file://$PROJECT_DIR$/Tests/mainTester.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -996,11 +916,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/capureImageView.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="83" column="32" lean-forward="true" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
+        <state relative-caret-position="1743">
+          <caret line="83" column="32" lean-forward="false" selection-start-line="83" selection-start-column="32" selection-end-line="83" selection-end-column="32" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImageProcessing/lineDetection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImageProcessing/numberSquare.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MachineLearning/skLearn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="133" column="0" lean-forward="false" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ImageProcessing/line.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="987">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
 import operator
-from Picture.line import Line
-from Picture.line import Orientation
-from Picture.numberSquare import NumberSquare
-from Picture.skLearn import classify, setup_classifier
+from ImageProcessing.line import Line
+from ImageProcessing.line import Orientation
+from ImageProcessing.numberSquare import NumberSquare
+from MachineLearning.skLearn import classify, setup_classifier
 
 
 class Image:
