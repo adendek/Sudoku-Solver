@@ -1,6 +1,8 @@
 from ImageProcessing.line import Line, Orientation
 from ImageProcessing.numberSquare import NumberSquare
 from MachineLearning import char74kClassify
+from Common.Errors import InappropriateArgsError
+from Common.validationFunctions import Validator
 import numpy as np
 import operator
 import cv2
@@ -8,21 +10,19 @@ import os
 
 
 class ProcessImage:
-    def __init__(self, img, path=""):
-        if path == "":
+    def __init__(self, img, path=None):
+        if isinstance(img, np.ndarray) or (path is not None and os.path.exists(path) and isinstance(path, str)):
             self.img = img
+            if path is not None:  # we want to load from the picture path
+                self.img = cv2.imread(path)
+            if self.img is not None:  # self.img is set
+                self.height, self.width, self.channels = self.img.shape
+                self.grid_lines = self._get_main_lines()
+                self.squares = self._get_field_squares()
         else:
-            self.path = path
-            if os.path.exists(path):
-                with open(path, 'rb') as f:
-                    try:
-                        self.img = cv2.imread(path)
-                    except:
-                        print("No such file exists")
-
-        self.height, self.width, self.channels = self.img.shape
-        self.grid_lines = self._get_main_lines()
-        self.squares = self._get_field_squares()
+            if path is not None and not os.path.exists(path) and isinstance(path, str):
+                raise FileNotFoundError("File does not exists: " + path)
+            raise InappropriateArgsError("creating a Process Image")
 
     def _get_hough_lines(self):
         gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)  # Convert the img to gray scale
@@ -49,6 +49,7 @@ class ProcessImage:
         return lines
 
     def _get_padding(self):
+        # what is the minimum distance between lines
         return self.width // 18  # Based on the test pictures this is the best ratio
 
     def _get_main_lines(self):
@@ -124,7 +125,7 @@ class ProcessImage:
             print("+---+---+---+---+---+---+---+---+---+")
             lineMatrix = []
             for i, square in enumerate(line):
-                if self.imagecolor(self.get_image(square)) != 0:
+                if self._image_color(self.get_image(square)) != 0:
                     predicted = model.classifyImage(self.get_image(square))
                 else:
                     predicted = 0
@@ -138,7 +139,6 @@ class ProcessImage:
                     print("|")
             matrix.append(lineMatrix)
         print("+---+---+---+---+---+---+---+---+---+")
-        print(matrix)
         return matrix
 
     def show(self):
@@ -146,73 +146,76 @@ class ProcessImage:
         cv2.waitKey(0)
 
     def get_image(self, square):
-        p1, p2, p3, p4 = square.get_points()
-        cut_border = 5
-        p1 = (p1[0] + cut_border+3, p1[1] + cut_border)
-        p4 = (p4[0] - cut_border, p4[1] - cut_border)
-        pts = np.array([[p1[0], p1[1]], [p4[0], p4[1]]])
-        r = cv2.boundingRect(pts)
-
-        return self.img[r[1]:r[1] + r[3], r[0]:r[0] + r[2]]
-
-    def imagecolor(self, image):
-        img = image
-
-        brown = [255, 255, 255]  # gray level
-        diff = 220
-        boundaries = [([brown[2] - diff, brown[1] - diff, brown[0] - diff],
-                       [brown[2] + diff, brown[1] + diff, brown[0] + diff])]
-        # in order BGR as opencv represents images as numpy arrays in reverse order
-
-        for (lower, upper) in boundaries:
-            lower = np.array(lower, dtype=np.uint8)
-            upper = np.array(upper, dtype=np.uint8)
-            mask = cv2.inRange(img, lower, upper)
-            # output = cv2.bitwise_and(img, img, mask=mask)
-            img = self.crop(img)
-            if type(img) == int:
-                return 0
-            # cv2.imshow("images", img)
-            # cv2.waitKey(0)
-            ratio_brown = cv2.countNonZero(mask) / (img.size / 3)
-            # print('brown  pixel :', ratio_brown)
-            percent = np.round(ratio_brown * 100, 2)
-            # print('brown pixel pexrcentage:', np.round(ratio_brown * 100, 2))
-
-
-            if (percent > 4):
-                return ratio_brown
-            else:
-                return 0
-
-    def crop(self, img):
-        ## (1) Convert to gray, and threshold
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        th, threshed = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY_INV)
-
-        ## (2) Morph-op to remove noise
-        kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
-        morphed = cv2.morphologyEx(threshed, cv2.MORPH_CLOSE, kernel)
-
-        ## (3) Find the max-area contour
-        _, cnts, _ = cv2.findContours(morphed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        if cnts:
-
-            cnt = sorted(cnts, key=cv2.contourArea)[-1]
-            ## (4) Crop and save it
-            x, y, w, h = cv2.boundingRect(cnt)
-
-            higher = max(w,h)
-            lower = min(w,h)
-
-            diff = (lower / higher) * 100
-            if diff > 30:
-                dst = img[y:y + h, x:x + w]
-                return dst
-            else:
-                return 0
+        if Validator.is_type(square, NumberSquare):
+            p1, p2, p3, p4 = square.get_points()
+            cut_border = 5
+            p1 = (p1[0] + cut_border+3, p1[1] + cut_border)
+            p4 = (p4[0] - cut_border, p4[1] - cut_border)
+            pts = np.array([[p1[0], p1[1]], [p4[0], p4[1]]])
+            r = cv2.boundingRect(pts)
+            return self.img[r[1]:r[1] + r[3], r[0]:r[0] + r[2]]
         else:
-            return img
+            raise InappropriateArgsError("getting image")
+
+    def _image_color(self, image):
+        if Validator.is_type(image, np.ndarray):
+            img = image
+            brown = [255, 255, 255]  # gray level
+            diff = 220
+            boundaries = [([brown[2] - diff, brown[1] - diff, brown[0] - diff],
+                           [brown[2] + diff, brown[1] + diff, brown[0] + diff])]
+            # in order BGR as opencv represents images as numpy arrays in reverse order
+
+            for (lower, upper) in boundaries:
+                lower = np.array(lower, dtype=np.uint8)
+                upper = np.array(upper, dtype=np.uint8)
+                mask = cv2.inRange(img, lower, upper)
+                img = self._crop(img)  # output = cv2.bitwise_and(img, img, mask=mask)
+                if type(img) == int:
+                    return 0
+                # cv2.imshow("images", img)
+                # cv2.waitKey(0)
+                ratio_brown = cv2.countNonZero(mask) / (img.size / 3)
+                # print('brown  pixel :', ratio_brown)
+                percent = np.round(ratio_brown * 100, 2)
+                # print('brown pixel pexrcentage:', np.round(ratio_brown * 100, 2))
+                if percent > 4:
+                    return ratio_brown
+                else:
+                    return 0
+        else:
+            raise InappropriateArgsError("processing image_color")
+
+    def _crop(self, img):
+        if Validator.is_type(img, np.ndarray):
+            ## (1) Convert to gray, and threshold
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            th, threshed = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY_INV)
+
+            ## (2) Morph-op to remove noise
+            kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (11, 11))
+            morphed = cv2.morphologyEx(threshed, cv2.MORPH_CLOSE, kernel)
+
+            ## (3) Find the max-area contour
+            _, cnts, _ = cv2.findContours(morphed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+            if cnts:
+
+                cnt = sorted(cnts, key=cv2.contourArea)[-1]
+                x, y, w, h = cv2.boundingRect(cnt)  ## (4) Crop and save it
+
+                higher = max(w, h)
+                lower = min(w, h)
+
+                diff = (lower / higher) * 100
+                if diff > 30:
+                    dst = img[y:y + h, x:x + w]
+                    return dst
+                else:
+                    return 0
+            else:
+                return img
+        else:
+            raise InappropriateArgsError("croping the image (_crop)")
 
 
 if __name__ == '__main__':

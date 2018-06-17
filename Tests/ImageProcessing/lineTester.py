@@ -57,7 +57,6 @@ class LineTester(TestCase):
 
     def test_incorrect_init(self):
         self.assertRaises(InappropriateArgsError, lambda: Line(0, 0, 0, 0))  # point not a line
-        self.assertRaises(InappropriateArgsError, lambda: Line(0, 0, 0, -1))
         self.assertRaises(InappropriateArgsError, lambda: Line(0, 0, 0, "1"))
 
     def test_correct_init(self):

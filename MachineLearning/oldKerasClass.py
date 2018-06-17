@@ -42,18 +42,18 @@ class classifyKeras():
 
         self.model = self.createModel(num_classes)
 
-        if (os.path.isfile('../model/model.h5')):
-            self.model.load_weights('../model/model.h5')
+        if (os.path.isfile('../Model/Model.h5')):
+            self.model.load_weights('../Model/Model.h5')
         else:
             self.model.fit(self.X_train, self.y_train,
                       batch_size=128,
                       epochs=12,
                       verbose=1,
                       validation_data=(self.X_test, self.y_test))
-            self.model.save('../model/model.h5')
+            self.model.save('../Model/Model.h5')
 
     def createModel(self, num_classes):
-        # create model
+        # create Model
         model = Sequential()
         model.add(Conv2D(32, kernel_size=(3, 3),
                          activation='relu',
@@ -65,7 +65,7 @@ class classifyKeras():
         model.add(Dense(128, activation='relu'))
         model.add(Dropout(0.5))
         model.add(Dense(num_classes, activation='softmax'))
-        # Compile model
+        # Compile Model
         model.compile(loss=categorical_crossentropy,
                       optimizer=Adadelta(),
                       metrics=['accuracy'])

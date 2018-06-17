@@ -5,7 +5,7 @@ from enum import Enum
 
 class Line:
     def __init__(self, x1, y1, x2, y2):
-        if Validator.is_positive_number([x1, y1, x2, y2]) and not (x1 == x2 and y1 == y2):  # not a line
+        if Validator.is_number([x1, y1, x2, y2]) and not (x1 == x2 and y1 == y2):  # not a line, but a dot
             self.x1 = x1
             self.y1 = y1
             self.x2 = x2

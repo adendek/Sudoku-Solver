@@ -3,7 +3,7 @@ import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
 from tkinter import TclError
 from GUI import askIfCorrectView
-from ImageProcessing.ProcessImage import ProcessImage
+from ImageProcessing.processImage import ProcessImage
 import tkinter
 import PIL.ImageTk
 import PIL.Image

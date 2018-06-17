@@ -27,9 +27,7 @@ class char74kClassify:
         self.loadData()
 
     def loadData(self):
-        PATH = os.getcwd()
-        # Define data path
-        print(PATH)
+        PATH = os.path.dirname(os.path.realpath(__file__))
         data_path = PATH + '/../DataSet/data'
         data_dir_list = os.listdir(data_path)
 
@@ -135,7 +133,7 @@ class char74kClassify:
         input_shape = img_data[0].shape
 
 
-        print("Loading model...")
+        print("Loading Model...")
         self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=input_shape))
         self.model.add(Activation('relu'))
         self.model.add(Convolution2D(32, 3, 3))
@@ -145,8 +143,8 @@ class char74kClassify:
 
         self.model.add(Convolution2D(64, 3, 3))
         self.model.add(Activation('relu'))
-        # self.model.add(Convolution2D(64, 3, 3))
-        # self.model.add(Activation('relu'))
+        # self.Model.add(Convolution2D(64, 3, 3))
+        # self.Model.add(Activation('relu'))
         self.model.add(MaxPooling2D(pool_size=(2, 2)))
         self.model.add(Dropout(0.5))
 
@@ -158,33 +156,31 @@ class char74kClassify:
         self.model.add(Activation('softmax'))
 
         # sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
-        # self.model.compile(loss='categorical_crossentropy', optimizer=sgd,metrics=["accuracy"])
+        # self.Model.compile(loss='categorical_crossentropy', optimizer=sgd,metrics=["accuracy"])
         self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=["accuracy"])
 
         # Viewing self.model_configuration
 
-        # self.model.summary()
-        # self.model.get_config()
-        # self.model.layers[0].get_config()
-        # self.model.layers[0].input_shape
-        # self.model.layers[0].output_shape
-        # self.model.layers[0].get_weights()
-        # np.shape(self.model.layers[0].get_weights()[0])
-        # self.model.layers[0].trainable
+        # self.Model.summary()
+        # self.Model.get_config()
+        # self.Model.layers[0].get_config()
+        # self.Model.layers[0].input_shape
+        # self.Model.layers[0].output_shape
+        # self.Model.layers[0].get_weights()
+        # np.shape(self.Model.layers[0].get_weights()[0])
+        # self.Model.layers[0].trainable
 
         # %%
         # Training
 
-        if (os.path.isfile('../model/char74k.h5')):
-            self.model.load_weights('../model/char74k.h5')
+        if (os.path.isfile(PATH + '/../Model/char74k.h5')):
+            self.model.load_weights(PATH + '/../Model/char74k.h5')
         else:
             self.model.fit(X_train, y_train, batch_size=16, nb_epoch=self.num_epoch, verbose=1, validation_data=(X_test, y_test))
-            self.model.save('../model/char74k.h5')
+            self.model.save(PATH + '/../Model/char74k.h5')
         print("Model loaded")
+
     def classifyImage(self, img):
-
-
-
         # img = cv2.imread(path)
         img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, (28, 28))
