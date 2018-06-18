@@ -31,5 +31,5 @@ class AskIfCorrectViewTester(TestCase):
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
         ]
-        view = SolutionView(field, tkinter.Tk)
-        self.assertNotEqual(view.info_label["text"], "")
+        view = SolutionView(field, tkinter.Tk, text="Good job")
+        self.assertEqual(view.info_label["text"], "Good job")
