@@ -3,6 +3,7 @@ import GUI.Framework.widgets as widgets
 import GUI.variables.variables as var
 from tkinter import TclError
 from GUI import askIfCorrectView
+from Common.validationFunctions import Validator
 from ImageProcessing.processImage import ProcessImage
 import tkinter
 import PIL.ImageTk
@@ -20,8 +21,9 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         # Create a canvas that can fit the above video source size
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
         self.canvas.pack()
-        self.set_info_label("Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n"
-                            "Watch out that there will be a good light and try to have steady hand :)")
+        self.label_text = "Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n " \
+                          "Watch out that there will be a good light and try to have steady hand :)"
+        self.set_info_label(self.label_text)
 
         self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
 
@@ -39,10 +41,29 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
 
     def _take_picture(self):
         image = self.video.get_image()
-        field = ProcessImage(image).get_field_matrix()
-        self.withdraw()
-        self.video.video.release()  # stop filming
-        askIfCorrectView.AskIfCorrectView(field, self)
+        try:
+            field = [
+                [6, 5, 0, 8, 7, 3, 0, 9, 0],
+                [0, 0, 3, 2, 5, 0, 0, 0, 8],
+                [9, 8, 0, 1, 0, 4, 3, 5, 7],
+                [1, 0, 5, 0, 0, 0, 0, 0, 0],
+                [4, 0, 0, 0, 0, 0, 0, 0, 2],
+                [0, 0, 0, 0, 1, 0, 5, 0, 3],
+                [5, 7, 8, 3, 0, 1, 0, 2, 6],
+                [2, 0, 0, 0, 4, 8, 9, 0, 0],
+                [0, 9, 0, 6, 2, 5, 0, 8, 1]
+            ]
+            # field = ProcessImage(image).get_field_matrix()
+            if not Validator.is_9x9_integers_field(field):
+                self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
+                self.set_info_label("Could not detect any field :(")
+                return
+            self.withdraw()
+            self.video.video.release()  # stop filming
+            askIfCorrectView.AskIfCorrectView(field, self)
+        except IndexError:
+            self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
+            self.set_info_label("Could not detect any field :(")
 
     def _update(self):
         # Get a frame from the video source

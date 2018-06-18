@@ -25,8 +25,8 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
 
     def _go_to_solution(self):
         self.withdraw()
-        soluton = self._get_current_field()
-        if soluton:
-            solutionView.SolutionView(solutionView, self)
+        solution = self._get_current_field()
+        if solution:
+            solutionView.SolutionView(solution, self)
         else:
-            solutionView.SolutionView(self._get_current_field(), self, text="There is no solution to this sudoku!")
+            solutionView.SolutionView(self.field_numbers, self, text="There is no solution to this sudoku!")
