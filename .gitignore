@@ -105,9 +105,4 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-<<<<<<< HEAD
-.idea/
-=======
 .idea
-
->>>>>>> origin/roman
