@@ -88,7 +88,3 @@ class CaptureVideo:  # set video for tkinter
                 return ret, None
         else:
             return None, None
-
-
-if __name__ == '__main__':
-    CaptureImageView()

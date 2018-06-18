@@ -2,6 +2,7 @@ from GUI.Framework import sudokuFieldTemplate
 from GUI import solutionView
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
+from Alghoritm.algorithm import SudokuSolver
 
 
 class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
@@ -20,8 +21,12 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
                     self.field_numbers[y][x] = 0
                 else:
                     self.field_numbers[y][x] = int(text_edit.get_value())
-        return self.field_numbers
+        return SudokuSolver.get_solution(self.field_numbers)
 
     def _go_to_solution(self):
         self.withdraw()
-        solutionView.SolutionView(self._get_current_field(), self)
+        soluton = self._get_current_field()
+        if soluton:
+            solutionView.SolutionView(solutionView, self)
+        else:
+            solutionView.SolutionView(self._get_current_field(), self, text="There is no solution to this sudoku!")
