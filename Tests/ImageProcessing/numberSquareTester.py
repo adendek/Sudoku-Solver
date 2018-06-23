@@ -42,7 +42,6 @@ class NumberSquareTester(TestCase):
 
     def test_incorrect_init(self):
         self.assertRaises(InappropriateArgsError, lambda: NumberSquare(1, -1))
-        self.assertRaises(InappropriateArgsError, lambda: NumberSquare(1, 1.1))
         self.assertRaises(InappropriateArgsError, lambda: NumberSquare(1, "1"))
         self.assertRaises(InappropriateArgsError, lambda: NumberSquare(1, 1, 1))
         self.assertRaises(InappropriateArgsError, lambda: NumberSquare(10, 1))

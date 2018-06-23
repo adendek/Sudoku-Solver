@@ -1,6 +1,5 @@
 from ImageProcessing.line import Line, Orientation
 from ImageProcessing.numberSquare import NumberSquare
-from MachineLearning import char74kClassify
 from Common.Errors import InappropriateArgsError
 from Common.validationFunctions import Validator
 import numpy as np
@@ -10,9 +9,10 @@ import os
 
 
 class ProcessImage:
-    def __init__(self, img, path=None):
+    def __init__(self, img, model, path=None):
         if isinstance(img, np.ndarray) or (path is not None and os.path.exists(path) and isinstance(path, str)):
             self.img = img
+            self.model = model
             if path is not None:  # we want to load from the picture path
                 self.img = cv2.imread(path)
             if self.img is not None:  # self.img is set
@@ -50,7 +50,7 @@ class ProcessImage:
 
     def _get_padding(self):
         # what is the minimum distance between lines
-        return self.width // 18  # Based on the test pictures this is the best ratio
+        return self.width // 20  # Based on the test pictures this is the best ratio
 
     def _get_main_lines(self):
         """
@@ -119,14 +119,14 @@ class ProcessImage:
                 cv2.circle(self.img, p4, 3, (0, 0, 255), 5)
 
     def get_field_matrix(self):
-        model = char74kClassify.char74kClassify()
         matrix = []
         for line in self.squares:
             print("+---+---+---+---+---+---+---+---+---+")
             lineMatrix = []
             for i, square in enumerate(line):
-                if self._image_color(self.get_image(square)) != 0:
-                    predicted = model.classifyImage(self.get_image(square))
+                img = self.get_image(square)
+                if self._image_color(img) != 0:
+                    predicted = self.model.classifyImage(img)
                 else:
                     predicted = 0
                 if predicted == 0:
@@ -139,6 +139,8 @@ class ProcessImage:
                     print("|")
             matrix.append(lineMatrix)
         print("+---+---+---+---+---+---+---+---+---+")
+        self.draw_lines()
+        self.show()
         return matrix
 
     def show(self):
@@ -219,7 +221,8 @@ class ProcessImage:
 
 
 if __name__ == '__main__':
-    img = ProcessImage("ignore", path="./../SamplePictures/sudokuNice.jpg")
+    from MachineLearning import char74kClassify
+    img = ProcessImage("ignore", char74kClassify.char74kClassify(), path="./../SamplePictures/sudokuNice.jpg")
     img.get_field_matrix()
     img.draw_lines()
     img.show()

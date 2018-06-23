@@ -2,6 +2,7 @@ from unittest import TestCase
 from ImageProcessing.processImage import ProcessImage
 from Common.Errors import InappropriateArgsError
 from ImageProcessing.line import Orientation
+from MachineLearning import char74kClassify
 import numpy as np
 import cv2
 import os
@@ -13,7 +14,7 @@ class ProcessImageTester(TestCase):
     # missing _image_color and _crop tests
     def test_correct_get_image(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         squares = image._get_field_squares()
         square = squares[0][0]
         img = image.get_image(square)
@@ -21,7 +22,8 @@ class ProcessImageTester(TestCase):
 
     def test_get_field_matrix(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify())
+        print(image.img)
         field = image.get_field_matrix()
         self.assertEqual(type(field), list)
         self.assertEqual(type(field[0]), list)
@@ -30,7 +32,7 @@ class ProcessImageTester(TestCase):
 
     def test_get_field_squares(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         self.assertEqual(type(image._get_field_squares()), list)
         self.assertEqual(type(image._get_field_squares()[0]), list)
         self.assertEqual(len(image._get_field_squares()), 9)
@@ -38,7 +40,7 @@ class ProcessImageTester(TestCase):
 
     def test_get_main_lines(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         all_lines = image._get_all_lines()
         main_lines = image._get_main_lines()
         self.assertGreaterEqual(len(all_lines[Orientation.Vertical]), len(main_lines[Orientation.Vertical]))
@@ -56,12 +58,12 @@ class ProcessImageTester(TestCase):
 
     def test_padding(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         self.assertEqual(image.width // 18, image._get_padding())
 
     def test_get_all_lines(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         hough_lines = image._get_hough_lines()
         r = hough_lines[0][0][0]
         theta = hough_lines[0][0][1]
@@ -80,22 +82,22 @@ class ProcessImageTester(TestCase):
 
     def test_hough_lines(self):
         img = cv2.imread(PATH + "/../../SamplePictures/sudokuNice.jpg")
-        image = ProcessImage(img)
+        image = ProcessImage(img, char74kClassify.char74kClassify)
         self.assertEqual(type(image._get_hough_lines()), np.ndarray)
 
     def test_incorrect_init(self):
         path = "I hope It Doesn't Exists 123890-!"
-        self.assertRaises(InappropriateArgsError, lambda: ProcessImage("img"))
-        self.assertRaises(InappropriateArgsError, lambda: ProcessImage(1))
-        self.assertRaises(FileNotFoundError, lambda: ProcessImage("img", path))
-        self.assertRaises(InappropriateArgsError, lambda: ProcessImage("img", 1))
+        self.assertRaises(InappropriateArgsError, lambda: ProcessImage("img", char74kClassify.char74kClassify))
+        self.assertRaises(InappropriateArgsError, lambda: ProcessImage(1, char74kClassify.char74kClassify))
+        self.assertRaises(FileNotFoundError, lambda: ProcessImage("img", char74kClassify.char74kClassify, path))
+        self.assertRaises(InappropriateArgsError, lambda: ProcessImage("img", char74kClassify.char74kClassify, 1))
 
     def test_correct_init(self):
         path = PATH + "/../../SamplePictures/sudokuNice.jpg"
         img = cv2.imread(path)
-        image1 = ProcessImage(img)
-        image2 = ProcessImage("Doesn't matter", path=path)
-        image3 = ProcessImage(img, path)
+        image1 = ProcessImage(img, char74kClassify.char74kClassify)
+        image2 = ProcessImage("Doesn't matter", char74kClassify.char74kClassify, path=path)
+        image3 = ProcessImage(img, char74kClassify.char74kClassify, path)
         self.assertEqual(img.shape, image1.img.shape)  # compare images
         self.assertEqual(np.bitwise_xor(img, image1.img).any(), False)  # compares if they are the same
         self.assertEqual(img.shape, image2.img.shape)

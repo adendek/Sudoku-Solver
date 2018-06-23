@@ -4,7 +4,7 @@ from Common.Errors import InappropriateArgsError, AddingPointError
 
 class NumberSquare:
     def __init__(self, x, y, tl_point=None):
-        if Validator.is_positive_number([x, y]) and Validator.is_type([x, y], int) and x < 9 and y < 9 and \
+        if Validator.is_positive_number([x, y]) and x < 9 and y < 9 and \
                 (tl_point is None or (Validator.is_type(tl_point, tuple) and
                             Validator.is_positive_number([tl_point[0], tl_point[1]]))):
             self.x_position = x

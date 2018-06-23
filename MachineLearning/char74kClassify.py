@@ -15,6 +15,7 @@ from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 from keras.optimizers import SGD, RMSprop, adam
 
+
 # %%
 class char74kClassify:
     def __init__(self):
@@ -132,7 +133,6 @@ class char74kClassify:
 
         input_shape = img_data[0].shape
 
-
         print("Loading Model...")
         self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=input_shape))
         self.model.add(Activation('relu'))
@@ -173,7 +173,7 @@ class char74kClassify:
         # %%
         # Training
 
-        if (os.path.isfile(PATH + '/../Model/char74k.h5')):
+        if os.path.isfile(PATH + '/../Model/char74k.h5'):
             self.model.load_weights(PATH + '/../Model/char74k.h5')
         else:
             self.model.fit(X_train, y_train, batch_size=16, nb_epoch=self.num_epoch, verbose=1, validation_data=(X_test, y_test))
@@ -207,7 +207,7 @@ class char74kClassify:
         return self.model.predict_classes(img)[0]
 
     def resize_image(self, image):
-        img = cv2.resize(image, (28,28))
+        img = cv2.resize(image, (28, 28))
         arr = np.array(img)
 
         # convert to gray scale

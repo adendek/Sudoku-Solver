@@ -5,6 +5,8 @@ from tkinter import TclError
 from GUI import askIfCorrectView
 from Common.validationFunctions import Validator
 from ImageProcessing.processImage import ProcessImage
+from ImageProcessing.extractField import ExtractField
+from MachineLearning import char74kClassify
 import tkinter
 import PIL.ImageTk
 import PIL.Image
@@ -14,6 +16,8 @@ import cv2
 class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
     def __init__(self):
         super().__init__("Exit", self._on_destroy, "Take Picture", self._take_picture)
+        self.model = char74kClassify.char74kClassify()
+
         self.video = CaptureVideo()
         self.video_delay = 20  # ms - how often refreshes picture from the camera
 
@@ -22,12 +26,12 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
         self.canvas.pack()
         self.label_text = "Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n " \
-                          "Watch out that there will be a good light and try to have steady hand :)"
+                          "Watch out that there will be a good light and try to have a steady hand :)"
         self.set_info_label(self.label_text)
 
         self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
 
-        self._update()
+        self._update_video_frame()
 
         self._set_to_screen_center()
 
@@ -42,18 +46,20 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
     def _take_picture(self):
         image = self.video.get_image()
         try:
-            field = [
-                [6, 5, 0, 8, 7, 3, 0, 9, 0],
-                [0, 0, 3, 2, 5, 0, 0, 0, 8],
-                [9, 8, 0, 1, 0, 4, 3, 5, 7],
-                [1, 0, 5, 0, 0, 0, 0, 0, 0],
-                [4, 0, 0, 0, 0, 0, 0, 0, 2],
-                [0, 0, 0, 0, 1, 0, 5, 0, 3],
-                [5, 7, 8, 3, 0, 1, 0, 2, 6],
-                [2, 0, 0, 0, 4, 8, 9, 0, 0],
-                [0, 9, 0, 6, 2, 5, 0, 8, 1]
-            ]
-            # field = ProcessImage(image).get_field_matrix()
+            # field = [
+            #     [6, 5, 0, 8, 7, 3, 0, 9, 0],
+            #     [0, 0, 3, 2, 5, 0, 0, 0, 8],
+            #     [9, 8, 0, 1, 0, 4, 3, 5, 7],
+            #     [1, 0, 5, 0, 0, 0, 0, 0, 0],
+            #     [4, 0, 0, 0, 0, 0, 0, 0, 2],
+            #     [0, 0, 0, 0, 1, 0, 5, 0, 3],
+            #     [5, 7, 8, 3, 0, 1, 0, 2, 6],
+            #     [2, 0, 0, 0, 4, 8, 9, 0, 0],
+            #     [0, 9, 0, 6, 2, 5, 0, 8, 1]
+            # ]
+            #  field = ProcessImage(image, self.model).get_field_matrix()
+            field = ExtractField(image)
+            field.show_result()
             if not Validator.is_9x9_integers_field(field):
                 self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
                 self.set_info_label("Could not detect any field :(")
@@ -65,7 +71,7 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
             self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
             self.set_info_label("Could not detect any field :(")
 
-    def _update(self):
+    def _update_video_frame(self):
         # Get a frame from the video source
         ret, frame = self.video.get_frame()
         if ret:
@@ -74,7 +80,7 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
                 self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
             except TclError:
                 self.photo = None
-        self.after(self.video_delay, self._update)
+        self.after(self.video_delay, self._update_video_frame)
 
 
 class CaptureVideo:  # set video for tkinter
