@@ -5,7 +5,8 @@ from tkinter import TclError
 from GUI import askIfCorrectView
 from Common.validationFunctions import Validator
 from ImageProcessing.processImage import ProcessImage
-from ImageProcessing.extractField import ExtractField
+from ImageProcessing.extractSudokuField import ExtractField
+from ImageProcessing.processSudokuField import ProcessSudokuField
 from MachineLearning import char74kClassify
 import tkinter
 import PIL.ImageTk
@@ -16,7 +17,7 @@ import cv2
 class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
     def __init__(self):
         super().__init__("Exit", self._on_destroy, "Take Picture", self._take_picture)
-        self.model = char74kClassify.char74kClassify()
+        #self.model = char74kClassify.char74kClassify()
 
         self.video = CaptureVideo()
         self.video_delay = 20  # ms - how often refreshes picture from the camera
@@ -59,7 +60,8 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
             # ]
             #  field = ProcessImage(image, self.model).get_field_matrix()
             field = ExtractField(image)
-            field.show_result()
+            process = ProcessSudokuField(field.extract_sudoku_field())
+            process.show_field()
             if not Validator.is_9x9_integers_field(field):
                 self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
                 self.set_info_label("Could not detect any field :(")

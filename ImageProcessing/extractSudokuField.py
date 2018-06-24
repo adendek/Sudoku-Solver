@@ -159,7 +159,7 @@ class ExtractField:
             blbr = self._get_distance_between_points(bl, br)
             max_value = max([tltr, tlbl, trbr, blbr])  # returns the max value of the list
             min_value = min([tltr, tlbl, trbr, blbr])  # returns the min value of the list
-            if max_value - min_value > max_value * 0.2:  # if the difference is grater than 20 % of max value
+            if max_value - min_value > max_value * 0.1:  # if the difference is grater than 10 % of max value
                 raise SudokuFieldSizeError()  # one corner wasn't detected so we should try it again
             return max_value
         raise InappropriateArgsError("calculating the longest line")
@@ -210,13 +210,3 @@ class ExtractField:
         # shows source image
         cv2.imshow('source.jpg', self.img)
         cv2.waitKey(0)
-
-
-if __name__ == '__main__':
-    #img = ExtractField("./../SamplePictures/sudoku-original.jpg")
-    #img = ExtractField("./../SamplePictures/sudokuNice.jpg")
-    #img = ExtractField("./../SamplePictures/sudoku.png")
-    img = ExtractField("./../SamplePictures/sudoku.jpg")
-    img.show_blob()
-    img.show_source()
-    img.show_result()

@@ -1,13 +1,13 @@
 from Common.Errors import InappropriateArgsError, SudokuFieldSizeError
 from Common.validationFunctions import Validator
-from ImageProcessing.extractField import ExtractField
+from ImageProcessing.extractSudokuField import ExtractField
 from Tests.ImageProcessing.processImageTester import PATH
 from unittest import TestCase
 import numpy as np
 import cv2
 
 
-class ExtractFieldTester(TestCase):
+class ExtractSudokuFieldTester(TestCase):
     def test_incorrect_hide_smaller_blobs(self):
         path = PATH + "/../../SamplePictures/sudoku.jpg"
         field = ExtractField(path)
