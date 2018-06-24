@@ -1,4 +1,4 @@
-from Common.Errors import InappropriateArgsError
+from Common.Errors import InappropriateArgsError, SudokuFieldSizeError
 from Common.validationFunctions import Validator
 from collections import defaultdict
 import numpy as np
@@ -157,7 +157,11 @@ class ExtractField:
             tlbl = self._get_distance_between_points(tl, bl)
             trbr = self._get_distance_between_points(tr, br)
             blbr = self._get_distance_between_points(bl, br)
-            return max([tltr, tlbl, trbr, blbr])  # returns the max value of the list
+            max_value = max([tltr, tlbl, trbr, blbr])  # returns the max value of the list
+            min_value = min([tltr, tlbl, trbr, blbr])  # returns the min value of the list
+            if max_value - min_value > max_value * 0.2:  # if the difference is grater than 20 % of max value
+                raise SudokuFieldSizeError()  # one corner wasn't detected so we should try it again
+            return max_value
         raise InappropriateArgsError("calculating the longest line")
 
     def _get_hough_lines(self, img):

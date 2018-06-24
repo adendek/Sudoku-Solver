@@ -1,4 +1,4 @@
-from Common.Errors import InappropriateArgsError
+from Common.Errors import InappropriateArgsError, SudokuFieldSizeError
 from Common.validationFunctions import Validator
 from ImageProcessing.extractField import ExtractField
 from Tests.ImageProcessing.processImageTester import PATH
@@ -42,10 +42,11 @@ class ExtractFieldTester(TestCase):
     def test_correct_get_longest_line(self):
         path = PATH + "/../../SamplePictures/sudoku.jpg"
         field = ExtractField(path)
-        tl, tr, bl = (0, 0), (0, 0), (0, 0)
-        br = (0, 100)
+        tl, tr, bl, br = (0, 0), (100, 0), (0, 100), (100, 100)
         self.assertEqual(type(field._get_longest_line(tl, tr, bl, br)), float)
         self.assertEqual(field._get_longest_line(tl, tr, bl, br), 100)
+        tl, tr, bl, br = (0, 0), (100, 0), (0, 100), (100, 50)  # the difference is to big
+        self.assertRaises(SudokuFieldSizeError, lambda: field._get_longest_line(tl, tr, bl, br))
 
     def test_incorrect_draw_point(self):
         path = PATH + "/../../SamplePictures/sudoku.jpg"
