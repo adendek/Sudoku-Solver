@@ -4,7 +4,6 @@ import GUI.variables.variables as var
 from tkinter import TclError
 from GUI import askIfCorrectView
 from Common.validationFunctions import Validator
-from ImageProcessing.processImage import ProcessImage
 from ImageProcessing.extractSudokuField import ExtractField
 from ImageProcessing.processSudokuField import ProcessSudokuField
 from MachineLearning import char74kClassify
@@ -46,32 +45,27 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
 
     def _take_picture(self):
         image = self.video.get_image()
-        try:
-            # field = [
-            #     [6, 5, 0, 8, 7, 3, 0, 9, 0],
-            #     [0, 0, 3, 2, 5, 0, 0, 0, 8],
-            #     [9, 8, 0, 1, 0, 4, 3, 5, 7],
-            #     [1, 0, 5, 0, 0, 0, 0, 0, 0],
-            #     [4, 0, 0, 0, 0, 0, 0, 0, 2],
-            #     [0, 0, 0, 0, 1, 0, 5, 0, 3],
-            #     [5, 7, 8, 3, 0, 1, 0, 2, 6],
-            #     [2, 0, 0, 0, 4, 8, 9, 0, 0],
-            #     [0, 9, 0, 6, 2, 5, 0, 8, 1]
-            # ]
-            #  field = ProcessImage(image, self.model).get_field_matrix()
-            field = ExtractField(image)
-            process = ProcessSudokuField(field.extract_sudoku_field())
-            process.show_field()
-            if not Validator.is_9x9_integers_field(field):
-                self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
-                self.set_info_label("Could not detect any field :(")
-                return
-            self.withdraw()
-            self.video.video.release()  # stop filming
-            askIfCorrectView.AskIfCorrectView(field, self)
-        except IndexError:
-            self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
-            self.set_info_label("Could not detect any field :(")
+        # field = [
+        #     [6, 5, 0, 8, 7, 3, 0, 9, 0],
+        #     [0, 0, 3, 2, 5, 0, 0, 0, 8],
+        #     [9, 8, 0, 1, 0, 4, 3, 5, 7],
+        #     [1, 0, 5, 0, 0, 0, 0, 0, 0],
+        #     [4, 0, 0, 0, 0, 0, 0, 0, 2],
+        #     [0, 0, 0, 0, 1, 0, 5, 0, 3],
+        #     [5, 7, 8, 3, 0, 1, 0, 2, 6],
+        #     [2, 0, 0, 0, 4, 8, 9, 0, 0],
+        #     [0, 9, 0, 6, 2, 5, 0, 8, 1]
+        # ]
+        #  field = ProcessImage(image, self.model).get_field_matrix()
+        field = ExtractField(image)
+        process = ProcessSudokuField(field.extract_sudoku_field())
+        field = process.process_field_and_get_number_matrix()
+        self.withdraw()
+        self.video.video.release()  # stop filming
+        askIfCorrectView.AskIfCorrectView(field, self)
+        # except IndexError:
+        #     self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
+        #     self.set_info_label("Could not detect any field :(")
 
     def _update_video_frame(self):
         # Get a frame from the video source

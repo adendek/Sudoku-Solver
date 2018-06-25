@@ -8,6 +8,10 @@ from sklearn import datasets, svm
 tl_ratio = 2
 
 
+def classify_with_knn(img):
+    return classify(img, setup_classifier())
+
+
 def classify(img, classifier):
     img = resize(img)
     return classifier.predict(img.reshape((1, img.shape[0] * img.shape[1])))[0]
@@ -24,7 +28,7 @@ def setup_classifier():
 
 def resize(img):
     pic = imresize(img, (8, 8))
-    pic = pic[:, :, 0]
+    pic = pic[:, :]
 
     for y, val in enumerate(pic):
         for x, val2 in enumerate(val):
@@ -112,25 +116,6 @@ def show_output():
         test_classifier(neur_class, digits, pic)
         test_classifier(rfor_class, digits, pic)
         print("-------------------------------------")
-
-
-digits = datasets.load_digits()
-pic = get_pic("1.jpg")
-
-import warnings
-warnings.filterwarnings("ignore")
-# test_classifier(svm_class, digits, pic)
-# test_classifier(knn, digits, pic)
-# test_classifier(tree_class, digits, pic)
-# test_classifier(neur_class, digits, pic)
-# test_classifier(rfor_class, digits, pic)
-
-#optimize_knn(digits, pic)
-#optimize_svm(digits, pic)
-#optimize_tree(digits, pic)
-#optimize_neuro(digits, pic)
-#optimize_forest(digits, pic)
-# show_output()
 
 
 

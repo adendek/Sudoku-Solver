@@ -1,10 +1,12 @@
 from Common.Errors import InappropriateArgsError, SudokuFieldSizeError
 from Common.validationFunctions import Validator
 from ImageProcessing.extractSudokuField import ExtractField
-from Tests.ImageProcessing.processImageTester import PATH
 from unittest import TestCase
 import numpy as np
 import cv2
+import os
+
+PATH = os.path.dirname(os.path.realpath(__file__))
 
 
 class ExtractSudokuFieldTester(TestCase):
