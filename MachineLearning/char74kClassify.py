@@ -24,12 +24,14 @@ class char74kClassify:
         self.num_channel = 1
         self.num_epoch = 3
         self.model = Sequential()
+        # Define the number of classes
+        self.num_classes = 10
+        self.PATH = os.path.dirname(os.path.realpath(__file__))
 
         self.loadData()
 
-    def loadData(self):
-        PATH = os.path.dirname(os.path.realpath(__file__))
-        data_path = PATH + '/../DataSet/data'
+    def loadDataSet(self):
+        data_path = self.PATH + '/../DataSet/data'
         data_dir_list = os.listdir(data_path)
 
         img_data_list = []
@@ -73,7 +75,6 @@ class char74kClassify:
                 # a list of raw pixel intensities
                 return cv2.resize(image, size).flatten()
 
-
             img_data_list = []
             for dataset in data_dir_list:
                 img_list = os.listdir(data_path + '/' + dataset)
@@ -88,24 +89,27 @@ class char74kClassify:
             img_data_scaled = preprocessing.scale(img_data)
 
             if K.image_dim_ordering() == 'th':
-                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.num_channel, self.img_rows, self.img_cols)
+                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.num_channel, self.img_rows,
+                                                          self.img_cols)
 
             else:
-                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.img_rows, self.img_cols, self.num_channel)
+                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.img_rows, self.img_cols,
+                                                          self.num_channel)
 
             if K.image_dim_ordering() == 'th':
-                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.num_channel, self.img_rows, self.img_cols)
+                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.num_channel, self.img_rows,
+                                                          self.img_cols)
 
             else:
-                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.img_rows, self.img_cols, self.num_channel)
+                img_data_scaled = img_data_scaled.reshape(img_data.shape[0], self.img_rows, self.img_cols,
+                                                          self.num_channel)
 
         if USE_SKLEARN_PREPROCESSING:
             img_data = img_data_scaled
+
         # %%
         # Assigning Labels
 
-        # Define the number of classes
-        num_classes = 10
 
         num_of_samples = img_data.shape[0]
         labels = np.ones((num_of_samples,), dtype='int64')
@@ -121,20 +125,23 @@ class char74kClassify:
         labels[8127:9143] = 8
         labels[9143:10159] = 9
 
-        names = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
         # convert class labels to on-hot encoding
-        Y = np_utils.to_categorical(labels, num_classes)
+        Y = np_utils.to_categorical(labels, self.num_classes)
 
         # Shuffle the dataset
         x, y = shuffle(img_data, Y, random_state=2)
         # Split the dataset
-        X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
+        self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(x, y, test_size=0.2, random_state=2)
 
         input_shape = img_data[0].shape
+        print(input_shape)
+
+
+    def loadModel(self):
+
 
         print("Loading Model...")
-        self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=input_shape))
+        self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=(1,28,28)))
         self.model.add(Activation('relu'))
         self.model.add(Convolution2D(32, 3, 3))
         self.model.add(Activation('relu'))
@@ -152,7 +159,7 @@ class char74kClassify:
         self.model.add(Dense(64))
         self.model.add(Activation('relu'))
         self.model.add(Dropout(0.5))
-        self.model.add(Dense(num_classes))
+        self.model.add(Dense(self.num_classes))
         self.model.add(Activation('softmax'))
 
         # sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
@@ -170,14 +177,19 @@ class char74kClassify:
         # np.shape(self.Model.layers[0].get_weights()[0])
         # self.Model.layers[0].trainable
 
+    def loadData(self):
+
+        self.loadModel()
         # %%
         # Training
 
-        if os.path.isfile(PATH + '/../Model/char74k.h5'):
-            self.model.load_weights(PATH + '/../Model/char74k.h5')
+        if os.path.isfile(self.PATH + '/../Model/char74k.h5'):
+            self.model.load_weights(self.PATH + '/../Model/char74k.h5')
         else:
-            self.model.fit(X_train, y_train, batch_size=16, nb_epoch=self.num_epoch, verbose=1, validation_data=(X_test, y_test))
-            self.model.save(PATH + '/../Model/char74k.h5')
+            self.loadDataSet()
+
+            self.model.fit(self.X_train, self.y_train, batch_size=16, nb_epoch=self.num_epoch, verbose=1, validation_data=(self.X_test, self.y_test))
+            self.model.save(self.PATH + '/../Model/char74k.h5')
         print("Model loaded")
 
     def classifyImage(self, img):
