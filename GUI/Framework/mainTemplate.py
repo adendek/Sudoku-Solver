@@ -34,8 +34,18 @@ class MainTemplate(tkinter.Tk):
             raise InappropriateArgsError("a main template!")
 
     def set_info_label(self, text):
-        if not isinstance(text, list) and Validator.is_type(text, str):
+        if Validator.is_type(text, str):
+            self.info_label.config(fg="black")
             self.info_label["text"] = text
+            return text
+        else:
+            raise InappropriateArgsError("setting info label text!")
+
+    def display_error(self, text, after_error_text, error_duration):
+        if Validator.is_type([text, after_error_text], str) and Validator.is_positive_number(error_duration):
+            self.info_label.config(fg="red")
+            self.set_info_label(text)
+            self.after(error_duration, lambda: self.set_info_label(after_error_text))
             return text
         else:
             raise InappropriateArgsError("setting info label text!")

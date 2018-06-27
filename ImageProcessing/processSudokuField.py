@@ -1,6 +1,5 @@
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
-from MachineLearning.skLearn import classify_with_knn
 from MachineLearning.char74kClassify import char74kClassify
 import numpy as np
 import cv2

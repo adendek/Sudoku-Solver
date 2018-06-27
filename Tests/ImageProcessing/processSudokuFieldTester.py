@@ -436,4 +436,4 @@ class ProcessSudokuFieldTester(TestCase):
         self.assertEqual(process.height, 275)
         self.assertEqual(process.width, 275)
         self.assertEqual(process.error, process.width // 200)
-        self.assertEqual(process.cut_border, 2)
+        self.assertEqual(process.cut_border, 3)

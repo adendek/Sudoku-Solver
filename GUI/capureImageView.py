@@ -34,6 +34,7 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
 
         self.load_from_video = True
+        self.display_error("This is error!", self.label_text, 500)
 
         self._update_video_frame()
 
