@@ -4,9 +4,9 @@ from Common.Errors import InappropriateArgsError
 
 
 class SolutionView(sudokuFieldTemplate.SudokuFieldTemplate):
-    def __init__(self, field, loaded_from, text="This is the solution to the given sudoku!"):
-        if Validator.is_9x9_integers_field(field):
-            super().__init__("Change Digits", self._go_to_correct, field, loaded_from, readonly=True)
+    def __init__(self, field, detected, loaded_from, text="This is the solution to the given sudoku!"):
+        if Validator.is_9x9_integers_field(field) and isinstance(field, list):
+            super().__init__("Change Digits", self._go_to_correct, field, loaded_from, readonly=True, detected=detected)
             self.set_info_label(text)
         else:
             raise InappropriateArgsError("creating solution View!")

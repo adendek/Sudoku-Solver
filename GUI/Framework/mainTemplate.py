@@ -21,10 +21,10 @@ class MainTemplate(tkinter.Tk):
 
             self.bot_frame = widgets.Frame(self, row=4, sticky="ew", padx=var.BORDER, pady=var.BORDER)
             self.bot_frame.grid_columnconfigure(0, weight=1)
-            self.bot_frame.grid_columnconfigure(1, weight=1)
+            self.bot_frame.grid_columnconfigure(2, weight=1)
 
             self.left_button_frame = widgets.Frame(self.bot_frame, row=0, column=0, sticky="w")
-            self.right_button_frame = widgets.Frame(self.bot_frame, row=0, column=1, sticky="e")
+            self.right_button_frame = widgets.Frame(self.bot_frame, row=0, column=2, sticky="e")
 
             self.left_button = widgets.Button(self.left_button_frame, bt1_text, bt1_funct)
             self.right_button = widgets.Button(self.right_button_frame, bt2_text, bt2_funct)

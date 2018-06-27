@@ -7,7 +7,7 @@ import tkinter
 
 
 class SudokuFieldTemplate(mainTemplate.MainTemplate):
-    def __init__(self, bt_text, bt_funct, field_numbers, loaded_from, readonly=False):
+    def __init__(self, bt_text, bt_funct, field_numbers, loaded_from, readonly=False, detected=None):
         """
         creates a template with Sudoku field.
         :param bt_text: text of the button
@@ -22,6 +22,9 @@ class SudokuFieldTemplate(mainTemplate.MainTemplate):
             self.field_numbers = field_numbers  # 2d list of input digits
             self.readonly = readonly
             self.loaded_from = loaded_from
+            self.detected = detected  # non empty fields (from original field)
+            if self.detected is None:
+                self.detected = []
             self.text_edits = self._generate_field()  # 2d list of entries
 
             self._set_to_screen_center()
@@ -34,6 +37,9 @@ class SudokuFieldTemplate(mainTemplate.MainTemplate):
             line = []
             for x, number in enumerate(row):
                 text_edit = widgets.TextEdit(self.content_frame, number, readonly=self.readonly, row=y, column=x)
+                if (len(self.detected) == 0 and number != 0) or (y * 9 + x) in self.detected:
+                    text_edit.config(background="gray93")
+                    text_edit.config(readonlybackground="gray85")
                 line.append(text_edit)
             text_edits.append(line)
         return text_edits

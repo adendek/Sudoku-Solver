@@ -106,8 +106,8 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         except cv2.error:
             return self._handle_image_errors(msg)
         try:
-            process = ProcessSudokuField(field.extract_sudoku_field())
-            field = process.process_field_and_get_number_matrix()
+            self.process = ProcessSudokuField(field.extract_sudoku_field())
+            field = self.process.process_field_and_get_number_matrix()
         except (SudokuFieldSizeError, InappropriateArgsError) as e:
             return self._handle_errors_at_recognition(msg)
         self.withdraw()

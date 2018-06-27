@@ -186,5 +186,5 @@ class ProcessSudokuField:
         return self.process_field_and_get_number_matrix(draw_grid=True)
 
     def show_field(self):
-        cv2.imshow('field.jpg', self.img)
+        cv2.imshow('Detected field.jpg', self.img)
         cv2.waitKey(0)
