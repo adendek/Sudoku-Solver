@@ -1,7 +1,7 @@
 from Tests.GUI.Framework.widgetTester import test  # simple function
 from GUI.Framework.mainTemplate import MainTemplate
 import GUI.Framework.widgets as widgets
-import GUI.variables.variables as var
+import GUI.Variables.variables as var
 from Common.Errors import InappropriateArgsError
 from unittest import TestCase
 

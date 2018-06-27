@@ -1,5 +1,5 @@
 import tkinter
-import GUI.variables.variables as var
+import GUI.Variables.variables as var
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 

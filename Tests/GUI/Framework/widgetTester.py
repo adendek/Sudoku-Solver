@@ -1,6 +1,6 @@
 from unittest import TestCase
 from GUI.Framework import widgets
-from GUI.variables import variables
+from GUI.Variables import variables
 import tkinter
 from tkinter import TclError
 from Common.Errors import InappropriateArgsError

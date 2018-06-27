@@ -24,8 +24,8 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
         return SudokuSolver.get_solution(self.field_numbers)
 
     def _go_to_solution(self):
-        self.withdraw()
         solution = self._get_current_field()
+        self.withdraw()
         if solution:
             solutionView.SolutionView(solution, self)
         else:

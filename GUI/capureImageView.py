@@ -1,22 +1,23 @@
 import GUI.Framework.mainTemplate
 import GUI.Framework.widgets as widgets
-import GUI.variables.variables as var
+import GUI.Variables.variables as var
 from tkinter import TclError
 from GUI import askIfCorrectView
-from Common.validationFunctions import Validator
 from ImageProcessing.extractSudokuField import ExtractField
 from ImageProcessing.processSudokuField import ProcessSudokuField
-from MachineLearning import char74kClassify
+from tkinter.filedialog import askopenfilename
 import tkinter
 import PIL.ImageTk
 import PIL.Image
 import cv2
+import numpy as np
+import imghdr
+import os
 
 
 class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
     def __init__(self):
         super().__init__("Exit", self._on_destroy, "Take Picture", self._take_picture)
-        #self.model = char74kClassify.char74kClassify()
 
         self.video = CaptureVideo()
         self.video_delay = 20  # ms - how often refreshes picture from the camera
@@ -24,40 +25,82 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.content_frame = widgets.Frame(self, row=2, padx=var.BORDER, pady=var.BORDER)
         # Create a canvas that can fit the above video source size
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
-        self.canvas.pack()
+        self.canvas.grid(row=2)
         self.label_text = "Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n " \
                           "Watch out that there will be a good light and try to have a steady hand :)"
         self.set_info_label(self.label_text)
+        self.load_from_source_frame, self.vid_but, self.img_but = self._configure_load_from_source_frame()
 
         self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
+
+        self.load_from_video = True
 
         self._update_video_frame()
 
         self._set_to_screen_center()
 
-        self.mainloop()
+    def _configure_load_from_source_frame(self):
+        frame = widgets.Frame(self.content_frame, row=1, sticky="ew", pady=var.BORDER, padx=2)
+        frame.grid_columnconfigure(0, weight=1)
+        frame.grid_columnconfigure(1, weight=1)
+        vid_frame = widgets.Frame(frame, row=0, column=0, sticky="w")
+        pic_frame = widgets.Frame(frame, row=0, column=1, sticky="e")
+        vid = widgets.Button(vid_frame, "Take picture from the video", self.load_video)
+        vid.config(width=22, state="disabled")
+        pic = widgets.Button(pic_frame, "Load picture from source", self._load_picture)
+        pic.config(width=22)
+        return frame, vid, pic
+
+    def _load_picture(self):
+        filename = askopenfilename(parent=self)  # show an "Open" dialog box and return the path to the selected file
+        if os.path.exists(filename) and imghdr.what(filename) is not None:  # imghdr returns none if file isn't an image
+            self.vid_but.config(state="normal")
+            self.video.video.release()
+            self.img = self._change_img_size_if_to_big(PIL.Image.open(os.path.normpath(filename)))
+            self.photo_img = PIL.ImageTk.PhotoImage(self.img)
+            self._prepare_canvas(self.img.width, self.img.height)
+            self.canvas.create_image((0, 0), image=self.photo_img, anchor='nw')
+            self.load_from_video = False
+
+    def _change_img_size_if_to_big(self, img):
+        ratio = 2
+        width, height = img.width, img.height
+        max_width, max_height = self.winfo_screenwidth() / ratio, self.winfo_screenheight() / ratio
+        if width >= max_width or height >= max_height:
+            img.thumbnail((max_width, max_height), PIL.Image.ANTIALIAS)
+        return img
+
+    def _prepare_canvas(self, width, height):
+        self.canvas.delete("all")
+        self.canvas.config(width=width, height=height)
+        self._set_to_screen_center()
+
+    def load_video(self):
+        self.vid_but.config(state="disabled")
+        self.video = CaptureVideo()
+        self._prepare_canvas(self.video.width, self.video.height)
+        self.load_from_video = True
+        return self.video
+
+    def _get_image(self):
+        if self.load_from_video:
+            return self.video.get_image()
+        else:
+            return np.array(self.img)
 
     def _pressed_enter(self, event):
         self._take_picture()
 
-    def renew_video(self):
+    def rew_video(self):
         self.video = CaptureVideo()
 
     def _take_picture(self):
-        image = self.video.get_image()
-        # field = [
-        #     [6, 5, 0, 8, 7, 3, 0, 9, 0],
-        #     [0, 0, 3, 2, 5, 0, 0, 0, 8],
-        #     [9, 8, 0, 1, 0, 4, 3, 5, 7],
-        #     [1, 0, 5, 0, 0, 0, 0, 0, 0],
-        #     [4, 0, 0, 0, 0, 0, 0, 0, 2],
-        #     [0, 0, 0, 0, 1, 0, 5, 0, 3],
-        #     [5, 7, 8, 3, 0, 1, 0, 2, 6],
-        #     [2, 0, 0, 0, 4, 8, 9, 0, 0],
-        #     [0, 9, 0, 6, 2, 5, 0, 8, 1]
-        # ]
-        #  field = ProcessImage(image, self.model).get_field_matrix()
-        field = ExtractField(image)
+        image = self._get_image()
+        try:
+            field = ExtractField(image)
+        except cv2.error:
+            print("error")
+            return
         process = ProcessSudokuField(field.extract_sudoku_field())
         field = process.process_field_and_get_number_matrix()
         self.withdraw()

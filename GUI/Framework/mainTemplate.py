@@ -1,7 +1,7 @@
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 import GUI.Framework.widgets as widgets
-import GUI.variables.variables as var
+import GUI.Variables.variables as var
 import tkinter
 import sys
 
@@ -55,5 +55,6 @@ class MainTemplate(tkinter.Tk):
         self.geometry('+{}+{}'.format(x, y - 40))
 
     def _on_destroy(self):
+        tkinter._default_root = self
         self.destroy()
         sys.exit(0)

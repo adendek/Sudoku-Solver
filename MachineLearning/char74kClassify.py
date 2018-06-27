@@ -22,7 +22,7 @@ class char74kClassify:
         self.img_rows = 28
         self.img_cols = 28
         self.num_channel = 1
-        self.num_epoch = 20
+        self.num_epoch = 3
         self.model = Sequential()
 
         self.loadData()
@@ -182,7 +182,7 @@ class char74kClassify:
 
     def classifyImage(self, img):
         # img = cv2.imread(path)
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         img = cv2.resize(img, (28, 28))
         img = np.array(img)
         img = img.astype('float32')
@@ -221,4 +221,8 @@ class char74kClassify:
 
 if __name__ == '__main__':
     model = char74kClassify()
-    print(model.classifyImage("Picture/9.jpg"))
+    PATH = os.path.dirname(os.path.realpath(__file__))
+    img = cv2.imread(r"C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\DataSet\data\Sample004\img004-00002.png")
+    cv2.imshow("img", img)
+    cv2.waitKey(0)
+    print(model.classifyImage(img))

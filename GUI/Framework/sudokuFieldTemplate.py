@@ -1,6 +1,6 @@
 import GUI.Framework.mainTemplate as mainTemplate
 import GUI.Framework.widgets as widgets
-import GUI.variables.variables as var
+import GUI.Variables.variables as var
 from Common.Errors import InappropriateArgsError
 from Common.validationFunctions import Validator
 import tkinter
@@ -41,8 +41,7 @@ class SudokuFieldTemplate(mainTemplate.MainTemplate):
     def _go_back(self):
         self.destroy()
         tkinter._default_root = self.loaded_from
-        self.loaded_from.renew_video()
-        print("destroyed")
+        self.loaded_from.load_video()
         self.loaded_from.deiconify()  # makes window visible again
 
     def _on_destroy(self):
