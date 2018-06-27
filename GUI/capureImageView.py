@@ -5,6 +5,7 @@ from tkinter import TclError
 from GUI import askIfCorrectView
 from ImageProcessing.extractSudokuField import ExtractField
 from ImageProcessing.processSudokuField import ProcessSudokuField
+from Common.Errors import SudokuFieldSizeError, InappropriateArgsError
 from tkinter.filedialog import askopenfilename
 import tkinter
 import PIL.ImageTk
@@ -26,15 +27,14 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         # Create a canvas that can fit the above video source size
         self.canvas = tkinter.Canvas(self.content_frame, width=self.video.width, height=self.video.height)
         self.canvas.grid(row=2)
-        self.label_text = "Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n " \
-                          "Watch out that there will be a good light and try to have a steady hand :)"
+        self.label_text = "Show the picture of sudoku puzzle to the camera and press enter or click 'Take picture'.\n "\
+                          "The picture should not be curved and the Sudoku field should be clearly visible."
         self.set_info_label(self.label_text)
         self.load_from_source_frame, self.vid_but, self.img_but = self._configure_load_from_source_frame()
 
         self.bind("<Return>", self._pressed_enter)  # take the picture when user press enter
 
         self.load_from_video = True
-        self.display_error("This is error!", self.label_text, 500)
 
         self._update_video_frame()
 
@@ -62,6 +62,9 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
             self._prepare_canvas(self.img.width, self.img.height)
             self.canvas.create_image((0, 0), image=self.photo_img, anchor='nw')
             self.load_from_video = False
+        else:
+            err_text = "Path to image is not valid or the file is not an image!"
+            self.display_message(err_text, self.label_text, "red", 2)
 
     def _change_img_size_if_to_big(self, img):
         ratio = 2
@@ -96,20 +99,33 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.video = CaptureVideo()
 
     def _take_picture(self):
+        msg = self.display_message("Processing image!", self.label_text, "green")
         image = self._get_image()
         try:
             field = ExtractField(image)
         except cv2.error:
-            print("error")
-            return
-        process = ProcessSudokuField(field.extract_sudoku_field())
-        field = process.process_field_and_get_number_matrix()
+            return self._handle_image_errors(msg)
+        try:
+            process = ProcessSudokuField(field.extract_sudoku_field())
+            field = process.process_field_and_get_number_matrix()
+        except (SudokuFieldSizeError, InappropriateArgsError) as e:
+            return self._handle_errors_at_recognition(msg)
         self.withdraw()
         self.video.video.release()  # stop filming
-        askIfCorrectView.AskIfCorrectView(field, self)
-        # except IndexError:
-        #     self.after(5000, lambda: self.set_info_label(self.label_text))  # after 1s it resets the field
-        #     self.set_info_label("Could not detect any field :(")
+        view = askIfCorrectView.AskIfCorrectView(field, self)
+        view.iconbitmap(var.ICON_PATH)
+
+    def _handle_image_errors(self, after_id):
+        self.after_cancel(after_id)
+        text = "There appears to be some problems with Sudoku field detection...\n" \
+               "Make sure, that the lines, which outlines the field, are thick enough!"
+        return self.display_message(text, self.label_text, "red", 6)
+
+    def _handle_errors_at_recognition(self, after_id):
+        self.after_cancel(after_id)
+        text = "Could not detect Sudoku field correctly! Put the picture closer to the camera\n" \
+               "and make sure that the Sudoku field is curved as little as possible!"
+        return self.display_message(text, self.label_text, "red", 6)
 
     def _update_video_frame(self):
         # Get a frame from the video source

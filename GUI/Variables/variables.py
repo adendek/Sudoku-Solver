@@ -18,3 +18,4 @@ NUMBERS_FONT = "Arial"
 SQUARE_COLOR = "white"
 SQUARE_ERR_COLOR = "firebrick1"
 
+ICON_PATH = "GUI\\Framework\\icon.ico"

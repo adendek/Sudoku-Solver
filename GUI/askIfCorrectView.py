@@ -1,5 +1,6 @@
 from GUI.Framework import sudokuFieldTemplate
 from GUI import solutionView
+from GUI.Variables.variables import ICON_PATH
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 from Alghoritm.algorithm import SudokuSolver
@@ -9,7 +10,8 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
     def __init__(self, field, loaded_from):
         if Validator.is_9x9_integers_field(field):
             super().__init__("Continue", self._go_to_solution, field, loaded_from)
-            self.set_info_label("If the numbers are matching press 'Continue',\n else manually change the wrong ones.")
+            self.label_text = "If the numbers are matching press 'Continue',\n else manually change the wrong ones."
+            self.set_info_label(self.label_text)
         else:
             raise InappropriateArgsError("creating error handling view (AskIfCorrectView)!")
 
@@ -24,9 +26,14 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
         return SudokuSolver.get_solution(self.field_numbers)
 
     def _go_to_solution(self):
+        msg = self.display_message("Processing...\n", self.label_text, "green", 1)
+        self.update_idletasks()
         solution = self._get_current_field()
+        self.after_cancel(msg)
+        self.set_info_label(self.label_text)
         self.withdraw()
         if solution:
-            solutionView.SolutionView(solution, self)
+            view = solutionView.SolutionView(solution, self)
         else:
-            solutionView.SolutionView(self.field_numbers, self, text="There is no solution to this sudoku!")
+            view = solutionView.SolutionView(self.field_numbers, self, text="There is no solution to this sudoku!")
+        view.iconbitmap(ICON_PATH)

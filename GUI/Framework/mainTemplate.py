@@ -2,6 +2,7 @@ from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 import GUI.Framework.widgets as widgets
 import GUI.Variables.variables as var
+from PIL import ImageTk
 import tkinter
 import sys
 
@@ -41,12 +42,11 @@ class MainTemplate(tkinter.Tk):
         else:
             raise InappropriateArgsError("setting info label text!")
 
-    def display_error(self, text, after_error_text, error_duration):
-        if Validator.is_type([text, after_error_text], str) and Validator.is_positive_number(error_duration):
-            self.info_label.config(fg="red")
-            self.set_info_label(text)
-            self.after(error_duration, lambda: self.set_info_label(after_error_text))
-            return text
+    def display_message(self, text, after_error_text, color, error_duration=1):
+        if Validator.is_type([text, after_error_text, color], str) and Validator.is_positive_number(error_duration):
+            self.info_label.config(fg=color)
+            self.info_label["text"] = text
+            return self.after(error_duration * 1000, self.set_info_label, after_error_text)
         else:
             raise InappropriateArgsError("setting info label text!")
 
