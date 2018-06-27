@@ -111,7 +111,7 @@ class Char74kClassify:
 if __name__ == '__main__':
     model = Char74kClassify()
     PATH = os.path.dirname(os.path.realpath(__file__))
-    img = cv2.imread(r"C:\Users\Uporabnik\Desktop\fax\2.Letnik\python\Sudoku-Solver\DataSet\data\Sample004\img004-00002.png")
+    img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
     # cv2.imshow("img", img)
     # cv2.waitKey(0)
     print(model.ClassifyImage(img))
