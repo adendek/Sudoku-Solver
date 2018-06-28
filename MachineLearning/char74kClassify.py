@@ -47,12 +47,15 @@ class Char74kClassify:
 
     def _LoadData(self):
         self._LoadModel()
+        self._LoadFileModel()
 
+
+    def _LoadFileModel(self):
         # Training
-
         if os.path.isfile(self.PATH + '/../Model/char74k.h5'):
             self.model.load_weights(self.PATH + '/../Model/char74k.h5')
             print("Model loaded")
+            return True
         else:
             raise Exception("Model not founded in directory /Model")
 
@@ -86,7 +89,6 @@ class Char74kClassify:
 
 
     def ClassifyImage(self, img):
-
         img = self._Resizing(img)
         img = self._Reshaping(img)
 
