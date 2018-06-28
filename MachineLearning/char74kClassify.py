@@ -9,11 +9,11 @@ from keras import backend as K
 
 K.set_image_dim_ordering('th')
 
-from keras.utils import np_utils
+
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
-from keras.optimizers import SGD, RMSprop, adam
+
 
 
 # %%
@@ -60,12 +60,15 @@ class Char74kClassify:
     def _LoadData(self):
 
         self._LoadModel()
+        self._LoadFileModel()
 
+
+    def _LoadFileModel(self):
         # Training
-
         if os.path.isfile(self.PATH + '/../Model/char74k.h5'):
             self.model.load_weights(self.PATH + '/../Model/char74k.h5')
             print("Model loaded")
+            return True
         else:
             raise Exception("Model not founded in directory /Model")
 
@@ -100,7 +103,6 @@ class Char74kClassify:
 
 
     def ClassifyImage(self, img):
-
         img = self._Resizing(img)
         img = self._Reshaping(img)
 
