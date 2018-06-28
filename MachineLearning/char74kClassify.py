@@ -1,22 +1,13 @@
-import os, cv2
+import os
+import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-
-from sklearn.utils import shuffle
-from sklearn.cross_validation import train_test_split
-
 from keras import backend as K
-
 K.set_image_dim_ordering('th')
-
-from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
-from keras.optimizers import SGD, RMSprop, adam
 
 
-# %%
 class Char74kClassify:
     def __init__(self):
         self.img_rows = 28
@@ -31,8 +22,6 @@ class Char74kClassify:
         self._LoadData()
 
     def _LoadModel(self):
-
-
         print("Loading Model...")
         self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=(1,self.img_rows,self.img_cols)))
         self.model.add(Activation('relu'))
@@ -56,9 +45,7 @@ class Char74kClassify:
 
         self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=["accuracy"])
 
-
     def _LoadData(self):
-
         self._LoadModel()
 
         # Training
@@ -80,7 +67,6 @@ class Char74kClassify:
         return img
 
     def _Reshaping(self, img):
-
         if self.num_channel == 1:
             if K.image_dim_ordering() == 'th':
                 img = np.expand_dims(img, axis=0)

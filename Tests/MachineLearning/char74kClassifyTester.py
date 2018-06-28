@@ -4,11 +4,12 @@ from Common.Errors import InappropriateArgsError
 import numpy as np
 import cv2
 
+
 class TestChar74kClassify(TestCase):
 
     def test__Resizing(self):
         img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
-        expected = cv2.resize(img, (28,28))
+        expected = cv2.resize(img, (28, 28))
         char74k = Char74kClassify()
 
         height, width, channels = char74k._Resizing(expected).shape
