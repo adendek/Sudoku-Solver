@@ -28,9 +28,9 @@ class Char74kClassify:
         self.num_classes = 10
         self.PATH = os.path.dirname(os.path.realpath(__file__))
 
-        self._LoadData()
+        self._load_data()
 
-    def _LoadModel(self):
+    def _load_model(self):
 
 
         print("Loading Model...")
@@ -57,13 +57,13 @@ class Char74kClassify:
         self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=["accuracy"])
 
 
-    def _LoadData(self):
+    def _load_data(self):
 
-        self._LoadModel()
-        self._LoadFileModel()
+        self._load_model()
+        self._load_file_model()
 
 
-    def _LoadFileModel(self):
+    def _load_file_model(self):
         # Training
         if os.path.isfile(self.PATH + '/../Model/char74k.h5'):
             self.model.load_weights(self.PATH + '/../Model/char74k.h5')
@@ -72,17 +72,17 @@ class Char74kClassify:
         else:
             raise Exception("Model not founded in directory /Model")
 
-    def _Resizing(self, img):
+    def _resizing(self, img):
         img = cv2.resize(img, (28, 28))
         return img
 
-    def _ImgToArray(self, img):
+    def _img_to_array(self, img):
         img = np.array(img)
         img = img.astype('float32')
         img /= 255
         return img
 
-    def _Reshaping(self, img):
+    def _reshaping(self, img):
 
         if self.num_channel == 1:
             if K.image_dim_ordering() == 'th':
@@ -102,9 +102,9 @@ class Char74kClassify:
         return img
 
 
-    def ClassifyImage(self, img):
-        img = self._Resizing(img)
-        img = self._Reshaping(img)
+    def classify_image(self, img):
+        img = self._resizing(img)
+        img = self._reshaping(img)
 
         # Predicting the test image
         return self.model.predict_classes(img)[0]
@@ -116,4 +116,4 @@ if __name__ == '__main__':
     img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
     # cv2.imshow("img", img)
     # cv2.waitKey(0)
-    print(model.ClassifyImage(img))
+    print(model.classify_image(img))

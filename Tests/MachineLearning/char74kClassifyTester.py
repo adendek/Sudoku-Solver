@@ -6,28 +6,28 @@ import cv2
 
 class TestChar74kClassify(TestCase):
 
-    def test__Resizing(self):
+    def test__resizing(self):
         img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
         expected = cv2.resize(img, (28,28))
         char74k = Char74kClassify()
 
-        height, width, channels = char74k._Resizing(expected).shape
-        heightExpected, widthExpected, channelsExpected = char74k._Resizing(img).shape
+        height, width, channels = char74k._resizing(expected).shape
+        heightExpected, widthExpected, channelsExpected = char74k._resizing(img).shape
         self.assertEqual([height, width], [heightExpected, widthExpected])
 
-    def test__LoadFileModel(self):
+    def test__load_file_model(self):
         char74k = Char74kClassify()
-        self.assertEqual(char74k._LoadFileModel(), True)
+        self.assertEqual(char74k._load_file_model(), True)
 
-    def test__Reshaping(self):
+    def test__reshaping(self):
         img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
         char74k = Char74kClassify()
-        self.assertEqual(char74k._Reshaping(char74k._Resizing(char74k._ImgToArray(img))).shape, (1, 1, 28, 28, 3))
+        self.assertEqual(char74k._reshaping(char74k._resizing(char74k._img_to_array(img))).shape, (1, 1, 28, 28, 3))
 
     # #
-    # def test_ClassifyImage(self):
-    #     img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
-    #     result = 5
-    #     char74k = Char74kClassify()
-    #     img = char74k._Reshaping(char74k._Resizing(char74k._ImgToArray(img)))
-    #     self.assertEqual(char74k.ClassifyImage(img), result)
+    def test_classify_image(self):
+        img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
+        result = 5
+        char74k = Char74kClassify()
+        img = char74k._reshaping(char74k._resizing(char74k._img_to_array(img)))
+        self.assertEqual(char74k.classify_image(img), result)
