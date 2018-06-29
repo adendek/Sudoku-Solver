@@ -1,6 +1,6 @@
+from MachineLearning.char74kClassify import Char74kClassify
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
-from MachineLearning.char74kClassify import Char74kClassify
 import numpy as np
 import cv2
 
