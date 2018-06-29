@@ -1,11 +1,11 @@
-from GUI.Framework import sudokuFieldTemplate
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
+from GUI.Framework import sudokuFieldTemplate
 
 
 class SolutionView(sudokuFieldTemplate.SudokuFieldTemplate):
-    def __init__(self, field, detected, loaded_from, text="This is the solution to the given sudoku!"):
-        if Validator.is_9x9_integers_field(field) and isinstance(field, list):
+    def __init__(self, field, loaded_from, text="This is the solution to the given sudoku!", detected=None):
+        if Validator.is_9x9_integers_field(field) and isinstance(field, list) and Validator.is_type(text, str):
             super().__init__("Change Digits", self._go_to_correct, field, loaded_from, readonly=True, detected=detected)
             self.set_info_label(text)
         else:

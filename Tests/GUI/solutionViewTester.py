@@ -1,12 +1,12 @@
+from Common.Errors import InappropriateArgsError
 from GUI.solutionView import SolutionView
 from unittest import TestCase
 import tkinter
-from Common.Errors import InappropriateArgsError
 
 
 class AskIfCorrectViewTester(TestCase):
-    def test_incorrect_init(self):
-        field = [
+    def setUp(self):
+        self.incorrect_field = [
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
@@ -17,10 +17,7 @@ class AskIfCorrectViewTester(TestCase):
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
         ]
-        self.assertRaises(InappropriateArgsError, lambda: SolutionView(field, tkinter.Tk))
-
-    def test_correct_init(self):
-        field = [
+        self.correct_field = [
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
@@ -31,5 +28,11 @@ class AskIfCorrectViewTester(TestCase):
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
             [1, 0, 2, 0, 0, 0, 5, 3, 4],
         ]
-        view = SolutionView(field, tkinter.Tk, text="Good job")
-        self.assertEqual(view.info_label["text"], "Good job")
+        self.view = SolutionView(self.correct_field, tkinter.Tk, text="Good job")
+
+    def test_incorrect_init(self):
+        self.assertRaises(InappropriateArgsError, SolutionView, self.incorrect_field, tkinter.Tk)
+        self.assertRaises(InappropriateArgsError, SolutionView, self.incorrect_field, tkinter.Tk, 1)
+
+    def test_correct_init(self):
+        self.assertEqual(self.view.info_label["text"], "Good job")

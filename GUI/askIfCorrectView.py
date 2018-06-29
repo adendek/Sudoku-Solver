@@ -1,10 +1,10 @@
-from GUI.Framework import sudokuFieldTemplate
-from GUI import solutionView
-from GUI.Variables.variables import ICON_PATH
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
+from GUI.Framework import sudokuFieldTemplate
+from GUI.Variables.variables import ICON_PATH
 from Alghoritm.algorithm import SudokuSolver
 from GUI.Framework import widgets
+from GUI import solutionView
 
 
 class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
@@ -43,8 +43,8 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
         self.set_info_label(self.label_text)
         self.withdraw()
         if solution:
-            view = solutionView.SolutionView(solution, detected, self)
+            view = solutionView.SolutionView(solution, self, detected=detected)
         else:
             text = "There is no solution to this sudoku!"
-            view = solutionView.SolutionView(self.field_numbers, detected,  self, text=text)
+            view = solutionView.SolutionView(self.field_numbers, self, text=text, detected=detected)
         view.iconbitmap(ICON_PATH)

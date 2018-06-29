@@ -1,7 +1,7 @@
-import tkinter
-import GUI.Variables.variables as var
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
+import GUI.Variables.variables as var
+import tkinter
 
 
 class TextEdit(tkinter.Entry):
