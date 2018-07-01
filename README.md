@@ -12,7 +12,7 @@ Table of contents
 * [Getting Started](#getting-started)
     * [Prerequisites](#prerequisites)
     * [Quick start](#quick-start)
-* [How does it work?](#how-does-it-works?)
+* [How does it work?](#how-does-it-work)
     * [Extracting Sudoku field](#extracting-sudoku-field)
         * [Image pre-processing](#image-pre-processing)
         * [Finding the biggest blob](#finding-the-biggest-blob)
@@ -65,7 +65,7 @@ $ python3 main.py
 
 After the execution the program should start.
 
-## How does it works?
+## How does it work
 
 Here, we will briefly look at how the program is working - or at least the most important things. For any details please see the code or contact one of the [authors](#authors).
 
@@ -75,7 +75,7 @@ The purpose of this step is to extract the outline of Sudoku field.
  
 Lets first take a look at the image we want to process.
 
-![alt text]('SamplePictures/original.jpg?raw=true Original picture')
+![alt text](SamplePictures/original.jpg?raw=true 'Original picture')
 
 #### Image pre-processing
 
@@ -129,7 +129,7 @@ Which will color the blob to black.
 
 Lets see the result now:
 
-![alt text]('SamplePictures/blob.jpg?raw=true biggest blob')
+![alt text](SamplePictures/blob.jpg?raw=true 'biggest blob')
 
 #### Detecting lines
 
@@ -161,7 +161,7 @@ Original_image is the picture, taken form the camera, which has not been changed
 
 Lets see the result:
 
-![alt text]('SamplePictures/result.jpg?raw=true result')
+![alt text](SamplePictures/result.jpg?raw=true 'result')
 
 ### Extracting digits
 
@@ -171,11 +171,11 @@ After [Extracting the Sudoku field](#extracting-sudoku-field) we have a clear, s
 
 Like that:
 
-![alt text]('SamplePictures/grid.jpg?raw=true grid')
+![alt text](SamplePictures/grid.jpg?raw=true 'grid')
 
 We can easily extract the "small square" of the puzzle. Lets take first one for example:
 
-![alt text]('SamplePictures/0-original.jpg?raw=true first square')
+![alt text](SamplePictures/0-original.jpg?raw=true 'first square')
 
 Before continuing with recognition step, we must once again use some image processing.
 
@@ -190,11 +190,11 @@ Upper function returns the data about the biggest contour in the image (we assum
 If the ratio between width and height is not good enough, the field does not contain any number.
 Otherwise, proceed with processing. Lets see what is the result of the picture now:
 
-![alt text]('SamplePictures/0-transform.jpg?raw=true transformed first square')
+![alt text](SamplePictures/0-transform.jpg?raw=true 'transformed first square')
 
 Or a little bit more extreme case:
 
-![alt text]('SamplePictures/8-transform.jpg?raw=true transformed eight square')
+![alt text](SamplePictures/8-transform.jpg?raw=true 'transformed eight square')
 
 The image still contains a part of the line. So, we had to crop it and extract the contour section.
 
@@ -207,8 +207,8 @@ to switch white and black pixels. For the end we put this image to a bigger squa
 
 The image now, looks like that:
 
-![alt text]('SamplePictures/0-result.jpg?raw=true result first square')
-![alt text]('SamplePictures/8-result.jpg?raw=true result eight square')
+![alt text](SamplePictures/0-result.jpg?raw=true 'result first square')
+![alt text](SamplePictures/8-result.jpg?raw=true 'result eight square')
 
 Finally, the image is now ready for recognizing.
 
