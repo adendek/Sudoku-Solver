@@ -11,11 +11,11 @@ Table of contents
 * [Table of contents](#table-of-contents)
 * [Getting Started](#getting-started)
     * [Prerequisites](#prerequisites)
-        * [Python](#1.-python)
-        * [TensorFlow](#2.-tensorflow)
-        * [Keras](#3.-keras)
-        * [Pillow](#4.-pillow)
-        * [Sudoku-Solver](#5.-sudoku-solver)
+        * [Python](#python)
+        * [TensorFlow](#tensorflow)
+        * [Keras](#keras)
+        * [Pillow](#pillow)
+        * [Sudoku-Solver](#sudoku-solver-code)
     * [Quick start](#quick-start)
 * [How does it work?](#how-does-it-work)
     * [Extracting Sudoku field](#extracting-sudoku-field)
@@ -33,7 +33,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-#### 1. Python
+#### Python
 
 You need Python 3.4 or later to run Sudoku-Solver. You can have multiple Python versions (2.x and 3.x) installed on the same system without problems.
 
@@ -46,11 +46,11 @@ For other Linux flavors, OS X and Windows, packages are available at:
 [http://www.python.org/getit/](http://www.python.org/getit/)
 
 
-#### 2. TensorFlow
+#### TensorFlow
 
 For installing follow this link: [https://www.tensorflow.org/install/](https://www.tensorflow.org/install/)
 
-#### 3. Keras
+#### Keras
 
 There are two ways to install Keras:
 
@@ -63,6 +63,7 @@ There are two ways to install Keras:
 First, clone Keras using git:  
 
 ```git clone https://github.com/keras-team/keras.git```
+
 Then, cd to the Keras folder and run the install command:
 ```
 cd keras
@@ -71,7 +72,7 @@ sudo python setup.py install
 
 For more information check [https://keras.io/](https://keras.io/)
 
-#### 4. Pillow
+#### Pillow
 
 For installing Pillow enter the following command in the command line:
 
@@ -79,7 +80,7 @@ For installing Pillow enter the following command in the command line:
 
 Fro more information check [https://pillow.readthedocs.io/en/5.0.0/installation.html](https://pillow.readthedocs.io/en/5.0.0/installation.html) 
 
-#### 5. Sudoku Solver
+#### Sudoku Solver code
 To get all of the files needed to run this program, decide for one of the following options and follow it's steps.
 
 ##### Using git
