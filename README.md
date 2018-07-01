@@ -3,7 +3,7 @@ This program is designed to solve the [Sudoku puzzle](https://en.wikipedia.org/w
 It uses [openCV](https://opencv.org/) library for image processing, [Keras](https://en.wikipedia.org/wiki/Keras) for image recognition and it uses [Backtracking](https://en.wikipedia.org/wiki/Backtracking) algorithm for saving it.
 
 <p align="center">
-   <img src=SamplePictures/example.gif width="500" height="600"/>
+   <img src=SamplePictures/example.gif width="400" height="500"/>
 </p>
 
 Table of contents
@@ -119,7 +119,9 @@ The purpose of this step is to extract the outline of Sudoku field.
  
 Lets first take a look at the image we want to process.
 
-![alt text](SamplePictures/original.jpg?raw=true 'Original picture')
+<p align="center">
+   <img SamplePictures/original.jpg/>
+</p>
 
 #### Image pre-processing
 
@@ -173,7 +175,9 @@ Which will color the blob to black.
 
 Lets see the result now:
 
-![alt text](SamplePictures/blob.jpg?raw=true 'biggest blob')
+<p align="center">
+   <img SamplePictures/blob.jpg/>
+</p>
 
 #### Detecting lines
 
@@ -205,7 +209,9 @@ Original_image is the picture, taken form the camera, which has not been changed
 
 Lets see the result:
 
-![alt text](SamplePictures/result.jpg?raw=true 'result')
+<p align="center">
+   <img SamplePictures/result.jpg/>
+</p>
 
 ### Extracting digits
 
@@ -215,7 +221,9 @@ After [Extracting the Sudoku field](#extracting-sudoku-field) we have a clear, s
 
 Like that:
 
-![alt text](SamplePictures/grid.jpg?raw=true 'grid')
+<p align="center">
+   <img SamplePictures/grid.jpg/>
+</p>
 
 We can easily extract the "small square" of the puzzle. Lets take first one for example:
 

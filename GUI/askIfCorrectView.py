@@ -38,7 +38,7 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
                     self.field_numbers[y][x] = int(text_edit.get_value())
         return SudokuSolver.get_solution(self.field_numbers), detected
 
-    def _go_to_solution(self, kwargs):
+    def _go_to_solution(self):
         msg = self.display_message("Processing...\n", self.label_text, "green", 1)
         self.update_idletasks()
         solution, detected = self._get_current_field()
