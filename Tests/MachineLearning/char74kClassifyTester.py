@@ -33,15 +33,25 @@ class TestChar74kClassify(TestCase):
         self.assertRaises(InappropriateArgsError, lambda: char74k.classify_image(2))
         self.assertRaises(InappropriateArgsError, lambda: char74k.classify_image(2.6))
 
-    def test__load_file_model(self):
+    def test__load_file_weight(self):
         char74k = Char74kClassify()
-        self.assertEqual(char74k._load_file_model('../../Model/char74k.h5'), True)
+        self.assertEqual(char74k._load_file_weight('../../Model/char74k.h5'), True)
 
-    def test_incorrect__load_file_model(self):
+    def test__load_model(self):
         char74k = Char74kClassify()
-        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_model(" "))
-        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_model(2))
-        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_model(2.6))
+        self.assertEqual(char74k._load_model('../../Model/model.json'), True)
+
+    def test_incorrect__load_model(self):
+        char74k = Char74kClassify()
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_model(" "))
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_model(2))
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_model(2.6))
+
+    def test_incorrect__load_file_weight(self):
+        char74k = Char74kClassify()
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_weight(" "))
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_weight(2))
+        self.assertRaises(InappropriateArgsError, lambda: char74k._load_file_weight(2.6))
 
     def test__reshaping(self):
         char74k = Char74kClassify()
