@@ -9,6 +9,19 @@ install:
 
 script:
   - coverage run Tests/mainTester.py
+  - coverage run Tests/Common/errorTester.py
+  - coverage run Tests/Common/validatorTester.py
+  - coverage run Tests/GUI/Framework/mainTemplateTester.py
+  - coverage run Tests/GUI/Framework/sudokuFieldTemplateTester.py
+  - coverage run Tests/GUI/Framework/widgetTester.py
+  - coverage run Tests/GUI/Variables/VariablesTester.py
+  - coverage run Tests/GUI/askIfCorrectViewTester.py
+  - coverage run Tests/GUI/captureImageViewTester.py
+  - coverage run Tests/GUI/captureVideoTester.py
+  - coverage run Tests/GUI/solutionViewTester.py
+  - coverage run Tests/ImageProcessing/extractSudokuFieldTester.py
+  - coverage run Tests/ImageProcessing/processSudokuFieldTester.py
+  - coverage run Tests/MachineLearning/char74kClassifyTester.py
 
 after_success:
   - coveralls
