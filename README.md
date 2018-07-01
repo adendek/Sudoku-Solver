@@ -2,7 +2,9 @@
 This program is designed to solve the [Sudoku puzzle](https://en.wikipedia.org/wiki/Sudoku), taken from the camera.
 It uses [openCV](https://opencv.org/) library for image processing, [Keras](https://en.wikipedia.org/wiki/Keras) for image recognition and it uses [Backtracking](https://en.wikipedia.org/wiki/Backtracking) algorithm for saving it.
 
-<img src=SamplePictures/example.gif/>
+<p align="center">
+   <img src=SamplePictures/example.gif width="500" height="600"/>
+</p>
 
 Table of contents
 =================
