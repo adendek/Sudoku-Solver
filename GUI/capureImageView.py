@@ -1,18 +1,19 @@
-import GUI.Framework.mainTemplate
+from Common.Errors import SudokuFieldSizeError, InappropriateArgsError
+from ImageProcessing.processSudokuField import ProcessSudokuField
+from ImageProcessing.extractSudokuField import ExtractField
+from Common.validationFunctions import Validator
+from tkinter.filedialog import askopenfilename
 import GUI.Framework.widgets as widgets
 import GUI.Variables.variables as var
-from tkinter import TclError
+import GUI.Framework.mainTemplate
 from GUI import askIfCorrectView
-from ImageProcessing.extractSudokuField import ExtractField
-from ImageProcessing.processSudokuField import ProcessSudokuField
-from Common.Errors import SudokuFieldSizeError, InappropriateArgsError
-from tkinter.filedialog import askopenfilename
-import tkinter
+from tkinter import TclError
 import PIL.ImageTk
-import PIL.Image
-import cv2
 import numpy as np
+import PIL.Image
+import tkinter
 import imghdr
+import cv2
 import os
 
 
@@ -37,7 +38,6 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.load_from_video = True
 
         self._update_video_frame()
-
         self._set_to_screen_center()
 
     def _configure_load_from_source_frame(self):
@@ -67,6 +67,8 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
             self.display_message(err_text, self.label_text, "red", 2)
 
     def _change_img_size_if_to_big(self, img):
+        if not Validator.is_type(img, PIL.Image.Image):
+            raise InappropriateArgsError("changing image size! arg: " + str(img))
         ratio = 2
         width, height = img.width, img.height
         max_width, max_height = self.winfo_screenwidth() / ratio, self.winfo_screenheight() / ratio
@@ -75,9 +77,12 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         return img
 
     def _prepare_canvas(self, width, height):
-        self.canvas.delete("all")
-        self.canvas.config(width=width, height=height)
-        self._set_to_screen_center()
+        if Validator.is_positive_number([width, height]):
+            self.canvas.delete("all")
+            self.canvas.config(width=width, height=height)
+            self._set_to_screen_center()
+            return self.canvas
+        raise InappropriateArgsError("preparing canvas")
 
     def load_video(self):
         self.vid_but.config(state="disabled")
@@ -94,9 +99,6 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
 
     def _pressed_enter(self, event):
         self._take_picture()
-
-    def rew_video(self):
-        self.video = CaptureVideo()
 
     def _take_picture(self):
         msg = self.display_message("Processing image!", self.label_text, "green")
@@ -116,12 +118,16 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         view.iconbitmap(var.ICON_PATH)
 
     def _handle_image_errors(self, after_id):
+        if not Validator.is_type(after_id, str):
+            raise InappropriateArgsError("handling image_error")
         self.after_cancel(after_id)
         text = "There appears to be some problems with Sudoku field detection...\n" \
                "Make sure, that the lines, which outlines the field, are thick enough!"
         return self.display_message(text, self.label_text, "red", 6)
 
     def _handle_errors_at_recognition(self, after_id):
+        if not Validator.is_type(after_id, str):
+            raise InappropriateArgsError("handling error at recognition of the image")
         self.after_cancel(after_id)
         text = "Could not detect Sudoku field correctly! Put the picture closer to the camera\n" \
                "and make sure that the Sudoku field is curved as little as possible!"
@@ -145,7 +151,6 @@ class CaptureVideo:  # set video for tkinter
         self.video = cv2.VideoCapture(self.video_source)
         if not self.video.isOpened():
             raise ValueError("Unable to open video source", self.video_source)
-
         self.width = self.video.get(cv2.CAP_PROP_FRAME_WIDTH)
         self.height = self.video.get(cv2.CAP_PROP_FRAME_HEIGHT)
 

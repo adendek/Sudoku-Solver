@@ -115,11 +115,11 @@ class Char74kClassify:
 
     def classify_image(self, img):
         if Validator.is_type(img, np.ndarray):
-            img = self._resizing(img)
-            img = self._reshaping(img)
+                img = self._resizing(img)
+                img = self._reshaping(img)
 
-            # Predicting the test image
-            return self.model.predict_classes(img)[0]
+                # Predicting the test image
+                return self.model.predict_classes(img)[0]
         else:
             raise InappropriateArgsError("Input not valid")
 

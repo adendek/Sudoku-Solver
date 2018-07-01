@@ -1,6 +1,6 @@
+from MachineLearning.char74kClassify import Char74kClassify
 from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
-from MachineLearning.char74kClassify import Char74kClassify
 import numpy as np
 import cv2
 
@@ -40,7 +40,7 @@ class ProcessSudokuField:
             img = self._prepare_image_for_recognizing_or_return_0(img)
             if Validator.is_type(img, int) and img == 0:
                 return 0
-            return int(self.model.classify_image(img))  # TODO: change classifier
+            return int(self.model.classify_image(img))
         raise InappropriateArgsError("getting a number! arg: " + str(img))
 
     def _prepare_image_for_recognizing_or_return_0(self, img):

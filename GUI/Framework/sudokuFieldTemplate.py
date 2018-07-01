@@ -1,8 +1,8 @@
 import GUI.Framework.mainTemplate as mainTemplate
-import GUI.Framework.widgets as widgets
-import GUI.Variables.variables as var
 from Common.Errors import InappropriateArgsError
 from Common.validationFunctions import Validator
+import GUI.Framework.widgets as widgets
+import GUI.Variables.variables as var
 import tkinter
 
 

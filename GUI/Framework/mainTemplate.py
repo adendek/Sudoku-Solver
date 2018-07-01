@@ -2,7 +2,6 @@ from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 import GUI.Framework.widgets as widgets
 import GUI.Variables.variables as var
-from PIL import ImageTk
 import tkinter
 import sys
 
@@ -35,7 +34,7 @@ class MainTemplate(tkinter.Tk):
             raise InappropriateArgsError("a main template!")
 
     def set_info_label(self, text):
-        if Validator.is_type(text, str):
+        if Validator.is_type(text, str) and not isinstance(text, list):
             self.info_label.config(fg="black")
             self.info_label["text"] = text
             return text

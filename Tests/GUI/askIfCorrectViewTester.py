@@ -1,12 +1,13 @@
 from GUI.askIfCorrectView import AskIfCorrectView
+from Common.Errors import InappropriateArgsError
+from GUI.Framework.widgets import Button
 from unittest import TestCase
 import tkinter
-from Common.Errors import InappropriateArgsError
 
 
 class AskIfCorrectViewTester(TestCase):
-    def test_get_current_field(self):
-        correct_field = [
+    def setUp(self):
+        self.field = [
             [6, 5, 0, 8, 7, 3, 0, 9, 0],
             [0, 0, 3, 2, 5, 0, 0, 0, 8],
             [9, 8, 0, 1, 0, 4, 3, 5, 7],
@@ -17,7 +18,18 @@ class AskIfCorrectViewTester(TestCase):
             [2, 0, 0, 0, 4, 8, 9, 0, 0],
             [0, 9, 0, 6, 2, 5, 0, 8, 1]
         ]
-        unsolvable_field = [
+        self.incorrect_field = [
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+            [1, 0, 2, 0, 0, 0, 5, 3, 4],
+        ]
+        self.unsolvable_field = [
             [1, 2, 0, 4, 5, 6, 7, 8, 9],
             [0, 0, 3, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -28,7 +40,7 @@ class AskIfCorrectViewTester(TestCase):
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
-        wrong_field = [
+        self.wrong_field = [
             [1, 2, 0, 4, 5, 6, 7, 8, 9],
             [0, 0, 3, 0, 0, 0, 0, 0, 9],
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -39,9 +51,11 @@ class AskIfCorrectViewTester(TestCase):
             [0, 0, 0, 0, 0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 0, 0]
         ]
-        view1 = AskIfCorrectView(correct_field, tkinter.Tk)
-        view2 = AskIfCorrectView(unsolvable_field, tkinter.Tk)
-        view3 = AskIfCorrectView(wrong_field, tkinter.Tk)
+        self.view = AskIfCorrectView(self.field, tkinter.Tk)
+        self.view2 = AskIfCorrectView(self.unsolvable_field, tkinter.Tk)
+        self.view3 = AskIfCorrectView(self.wrong_field, tkinter.Tk)
+
+    def test_get_current_field(self):
         expected_output = [
             [6, 5, 1, 8, 7, 3, 2, 9, 4],
             [7, 4, 3, 2, 5, 9, 1, 6, 8],
@@ -53,35 +67,21 @@ class AskIfCorrectViewTester(TestCase):
             [2, 1, 6, 7, 4, 8, 9, 3, 5],
             [3, 9, 4, 6, 2, 5, 7, 8, 1]
         ]
-        self.assertEqual(view1._get_current_field(), expected_output)
-        self.assertEqual(view2._get_current_field(), False)
-        self.assertEqual(view3._get_current_field(), False)
+        correct_detected = [0, 1, 3, 4, 5, 7, 11, 12, 13, 17, 18, 19, 21, 23, 24, 25, 26, 27, 29, 36, 44, 49, 51, 53,
+                            54, 55, 56, 57, 59, 61, 62, 63, 67, 68, 69, 73, 75, 76, 77, 79, 80]
+        solution, detected = self.view._get_current_field()
+        self.assertEqual(solution, expected_output)
+        self.assertEqual(correct_detected, detected)
+        solution2, detected2 = self.view2._get_current_field()
+        self.assertEqual(solution2, False)
+        self.assertEqual(list, type(detected2))
+        solution3, detected3 = self.view3._get_current_field()
+        self.assertEqual(solution3, False)
+        self.assertEqual(list, type(detected3))
 
     def test_incorrect_init(self):
-        field = [
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-        ]
-        self.assertRaises(InappropriateArgsError, lambda: AskIfCorrectView(field, tkinter.Tk))
+        self.assertRaises(InappropriateArgsError, AskIfCorrectView, self.incorrect_field, tkinter.Tk)
 
     def test_correct_init(self):
-        field = [
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-            [1, 0, 2, 0, 0, 0, 5, 3, 4],
-        ]
-        view = AskIfCorrectView(field, tkinter.Tk)
-        self.assertNotEqual(view.info_label["text"], "")
+        self.assertEqual(self.view.info_label["text"], self.view.label_text)
+        self.assertEqual(type(self.view.show_image_button), Button)

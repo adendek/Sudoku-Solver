@@ -1,6 +1,3 @@
-import types
-
-
 class Validator:
     @staticmethod
     def is_type(value, value_type):

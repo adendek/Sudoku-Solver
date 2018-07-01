@@ -5,7 +5,7 @@ from Common.Errors import InappropriateArgsError
 import cv2
 
 class TestChar74kClassify(TestCase):
-        
+
     def test__resizing(self):
         char74k = Char74kClassify()
         img = cv2.imread("..\..\DataSet\data\Sample004\img004-00002.png")
