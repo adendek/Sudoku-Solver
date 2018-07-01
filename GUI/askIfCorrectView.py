@@ -15,6 +15,8 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
             self.set_info_label(self.label_text)
             show_image_frame = widgets.Frame(self.bot_frame, row=0, column=1, sticky="w")
             self.show_image_button = widgets.Button(show_image_frame, "Show field", self._show_detected_field)
+            self.bind("<Return>", self._go_to_solution)  # continue when user press enter
+            self.focus_force()
         else:
             raise InappropriateArgsError("creating error handling view (AskIfCorrectView)!")
 
@@ -35,7 +37,7 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
                     self.field_numbers[y][x] = int(text_edit.get_value())
         return SudokuSolver.get_solution(self.field_numbers), detected
 
-    def _go_to_solution(self):
+    def _go_to_solution(self, kwargs):
         msg = self.display_message("Processing...\n", self.label_text, "green", 1)
         self.update_idletasks()
         solution, detected = self._get_current_field()
