@@ -16,8 +16,6 @@ from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
 
 
-
-# %%
 class Char74kClassify:
     def __init__(self):
         self.img_rows = 28

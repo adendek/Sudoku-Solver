@@ -11,6 +11,11 @@ Table of contents
 * [Table of contents](#table-of-contents)
 * [Getting Started](#getting-started)
     * [Prerequisites](#prerequisites)
+        * [Python](#1.-python)
+        * [TensorFlow](#2.-tensorflow)
+        * [Keras](#3.-keras)
+        * [Pillow](#4.-pillow)
+        * [Sudoku-Solver](#5.-sudoku-solver)
     * [Quick start](#quick-start)
 * [How does it work?](#how-does-it-work)
     * [Extracting Sudoku field](#extracting-sudoku-field)
@@ -40,7 +45,41 @@ For other Linux flavors, OS X and Windows, packages are available at:
 
 [http://www.python.org/getit/](http://www.python.org/getit/)
 
-#### 2. Sudoku Solver
+
+#### 2. TensorFlow
+
+For installing follow this link: [https://www.tensorflow.org/install/](https://www.tensorflow.org/install/)
+
+#### 3. Keras
+
+There are two ways to install Keras:
+
+**Install Keras from PyPI (recommended):**
+
+```sudo pip install keras```
+
+**Alternatively: install Keras from the GitHub source:**
+
+First, clone Keras using git:  
+
+```git clone https://github.com/keras-team/keras.git```
+Then, cd to the Keras folder and run the install command:
+```
+cd keras
+sudo python setup.py install
+```
+
+For more information check [https://keras.io/](https://keras.io/)
+
+#### 4. Pillow
+
+For installing Pillow enter the following command in the command line:
+
+```pip install Pillow```
+
+Fro more information check [https://pillow.readthedocs.io/en/5.0.0/installation.html](https://pillow.readthedocs.io/en/5.0.0/installation.html) 
+
+#### 5. Sudoku Solver
 To get all of the files needed to run this program, decide for one of the following options and follow it's steps.
 
 ##### Using git
