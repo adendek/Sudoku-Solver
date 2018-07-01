@@ -24,6 +24,7 @@ Table of contents
         * [Detecting lines](#detecting-lines)
         * [Result](#result)
     * [Extracting digits](#extracting-digits)
+* [How to maximize accuracy](#how-to-maximize-accuracy)
 * [Tests](#tests)
 * [Authors](#authors)
 <!--te-->
@@ -251,6 +252,14 @@ The image now, looks like that:
 ![alt text](SamplePictures/8-result.jpg?raw=true 'result eight square')
 
 Finally, the image is now ready for recognizing.
+
+## How to Maximize accuracy
+
+To achieve good results, make sure that you do the following things:
+1. Image should be flat, not curved, so that the program would recognize field easier.
+2. The Sudoku's field outline should be thick enough.
+3. Try to capture puzzle as close to the camera as possible.
+4. While taking a picture make sure, that there is an appropriate light.
 
 ## Tests
 To run the tests for this project go to [Tests](https://github.com/ghribar97/Sudoku-Solver/tree/master/Tests) directory and run [mainTester.py](https://github.com/ghribar97/Sudoku-Solver/blob/master/Tests/mainTester.py)
