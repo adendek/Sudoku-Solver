@@ -115,7 +115,10 @@ class CaptureImageView(GUI.Framework.mainTemplate.MainTemplate):
         self.withdraw()
         self.video.video.release()  # stop filming
         view = askIfCorrectView.AskIfCorrectView(field, self)
-        view.iconbitmap(var.ICON_PATH)
+        try:
+            view.iconbitmap(var.ICON_PATH)
+        except tkinter.TclError:
+            pass
 
     def _handle_image_errors(self, after_id):
         if not Validator.is_type(after_id, str):

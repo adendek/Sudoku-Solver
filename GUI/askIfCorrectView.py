@@ -2,8 +2,9 @@ from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 from GUI.Framework import sudokuFieldTemplate
 from GUI.Variables.variables import ICON_PATH
-from Alghoritm.algorithm import SudokuSolver
+from Algorithm.algorithm import SudokuSolver
 from GUI.Framework import widgets
+from tkinter import TclError
 from GUI import solutionView
 
 
@@ -49,4 +50,7 @@ class AskIfCorrectView(sudokuFieldTemplate.SudokuFieldTemplate):
         else:
             text = "There is no solution to this sudoku!"
             view = solutionView.SolutionView(self.field_numbers, self, text=text, detected=detected)
-        view.iconbitmap(ICON_PATH)
+        try:
+            view.iconbitmap(ICON_PATH)
+        except TclError:
+            pass
