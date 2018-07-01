@@ -10,7 +10,7 @@ from Common.validationFunctions import Validator
 from Common.Errors import InappropriateArgsError
 K.set_image_dim_ordering('th')
 
-
+import keras
 from keras.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation, Flatten
 from keras.layers.convolutional import Convolution2D, MaxPooling2D
@@ -24,7 +24,6 @@ class Char74kClassify:
         self.img_cols = 28
         self.num_channel = 1
         self.num_epoch = 10
-        self.model = Sequential()
         # Define the number of classes
         self.num_classes = 10
         self.PATH = os.path.dirname(os.path.realpath(__file__))
@@ -32,30 +31,37 @@ class Char74kClassify:
         self._load_data()
 
     def _load_model(self):
+        # model_json = self.model.to_json()
+        # with open("model.json", "w") as json_file:
+        #     json_file.write(model_json)
 
+        with open("model.json", "r") as f:
+            json_str = f.read()
+        f.close()
+        self.model = keras.models.model_from_json(json_str)
 
         print("Loading Model...")
-        self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=(1,self.img_rows,self.img_cols)))
-        self.model.add(Activation('relu'))
-        self.model.add(Convolution2D(32, 3, 3))
-        self.model.add(Activation('relu'))
-        self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Dropout(0.5))
-
-        self.model.add(Convolution2D(64, 3, 3))
-        self.model.add(Activation('relu'))
-
-        self.model.add(MaxPooling2D(pool_size=(2, 2)))
-        self.model.add(Dropout(0.5))
-
-        self.model.add(Flatten())
-        self.model.add(Dense(64))
-        self.model.add(Activation('relu'))
-        self.model.add(Dropout(0.5))
-        self.model.add(Dense(self.num_classes))
-        self.model.add(Activation('softmax'))
-
-        self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=["accuracy"])
+        # self.model.add(Convolution2D(32, 3, 3, border_mode='same', input_shape=(1,self.img_rows,self.img_cols)))
+        # self.model.add(Activation('relu'))
+        # self.model.add(Convolution2D(32, 3, 3))
+        # self.model.add(Activation('relu'))
+        # self.model.add(MaxPooling2D(pool_size=(2, 2)))
+        # self.model.add(Dropout(0.5))
+        #
+        # self.model.add(Convolution2D(64, 3, 3))
+        # self.model.add(Activation('relu'))
+        #
+        # self.model.add(MaxPooling2D(pool_size=(2, 2)))
+        # self.model.add(Dropout(0.5))
+        #
+        # self.model.add(Flatten())
+        # self.model.add(Dense(64))
+        # self.model.add(Activation('relu'))
+        # self.model.add(Dropout(0.5))
+        # self.model.add(Dense(self.num_classes))
+        # self.model.add(Activation('softmax'))
+        #
+        # self.model.compile(loss='categorical_crossentropy', optimizer='rmsprop', metrics=["accuracy"])
 
 
     def _load_data(self):
@@ -66,6 +72,7 @@ class Char74kClassify:
 
     def _load_file_model(self, path):
         # Training
+
         if Validator.is_type(path, str):
             if os.path.isfile(path):
                 self.model.load_weights(path)
