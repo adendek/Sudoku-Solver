@@ -188,3 +188,4 @@ class ProcessSudokuField:
     def show_field(self):
         cv2.imshow('Detected field.jpg', self.img)
         cv2.waitKey(0)
+        return self.img

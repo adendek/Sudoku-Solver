@@ -198,15 +198,19 @@ class ExtractField:
 
     def show_result(self):
         # show what is the result -> should be only sudoku field
-        cv2.imshow("result", self.extract_sudoku_field())
+        result = self.extract_sudoku_field()
+        cv2.imshow("result", result)
         cv2.waitKey(0)
+        return result
 
     def show_blob(self):
         # shows the biggest blob in the picture -> outline of sudoku field
         cv2.imshow("blob.jpg", self.changing_img)
         cv2.waitKey(0)
+        return self.changing_img
 
     def show_source(self):
         # shows source image
         cv2.imshow('source.jpg', self.img)
         cv2.waitKey(0)
+        return self.img
